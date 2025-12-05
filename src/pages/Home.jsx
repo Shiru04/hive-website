@@ -1,0 +1,90 @@
+import SeoHead from "../seo/SeoHead.jsx";
+import Hero from "../components/Hero.jsx";
+import ServiceCard from "../components/ServiceCard.jsx";
+import WhyHive from "../components/WhyHive.jsx";
+import { Link } from "react-router-dom";
+import ContactForm from "../components/ContactForm.jsx";
+
+export default function Home() {
+  const featuredServices = [
+    {
+      title: "Performance Marketing (Google Ads)",
+      subtitle: "Lead generation with intent",
+      description:
+        "Campaigns engineered to capture high-intent searches, filter out noise and feed your sales pipeline with real opportunities.",
+      bullets: [
+        "Campaign build and restructure",
+        "Conversion and call tracking",
+        "Ongoing optimization and reporting"
+      ]
+    },
+    {
+      title: "Websites that convert",
+      subtitle: "React, Vite, Tailwind",
+      description:
+        "Fast, modern websites built for SEO, clarity and conversions—not for awards. Every section has a job.",
+      bullets: ["Information architecture", "UX & conversion copy", "Technical SEO"]
+    },
+    {
+      title: "Internal tools & automation",
+      subtitle: "From lead to invoice",
+      description:
+        "Custom tools to manage leads, quotes, invoices and operations so your team spends more time closing and less time chasing spreadsheets.",
+      bullets: ["CRM-style tools", "Reporting dashboards", "Process automation"]
+    }
+  ];
+
+  return (
+    <>
+      <SeoHead
+        title="Digital Marketing & Web Development Agency"
+        description="Hive Media is a digital growth agency helping service businesses acquire and close more leads through performance marketing, web development and internal tools."
+      />
+      <Hero />
+
+      <section className="py-6">
+        <div className="flex items-baseline justify-between mb-4">
+          <h2 className="text-xl font-semibold text-slate-50">
+            What we do for our clients
+          </h2>
+          <Link
+            to="/services"
+            className="text-sm text-slate-300 hover:text-hive-yellow"
+          >
+            View all services →
+          </Link>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {featuredServices.map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
+      </section>
+
+      <WhyHive />
+
+      <section className="py-10 border-t border-slate-800">
+        <div className="grid gap-8 md:grid-cols-[3fr,2fr] items-start">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-2">
+              Let’s design your next growth step.
+            </h2>
+            <p className="text-base text-slate-300 mb-4">
+              Whether you need to fix tracking, clean up your Google Ads,
+              redesign your website or build an internal tool, we can help you
+              prioritize what will move the needle first.
+            </p>
+            <ul className="text-sm text-slate-400 space-y-1 mb-4">
+              <li>• Honest audit of your current marketing and tracking</li>
+              <li>• Clear roadmap for the next 90 days</li>
+              <li>• No long-term contracts, just work that performs</li>
+            </ul>
+          </div>
+          <div>
+            <ContactForm compact />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-950 text-slate-50 font-sans antialiased;
+}
+
+a {
+  @apply text-hive-yellow;
+}
+
+a:hover {
+  @apply opacity-90;
+}
+
+main {
+  @apply max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+html {
+  font-size: 18px; /* default is 16px */
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 20px;
+  }
+}
