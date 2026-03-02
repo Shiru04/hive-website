@@ -6,6 +6,19 @@ export default function About() {
       <SeoHead
         title="About Us"
         description="Hive Media is a digital growth agency focused on helping service-based businesses generate and close more leads with performance marketing, modern websites and internal tools."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About Us | Hive Media",
+          "url": "https://hivemediastop.com/about",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hivemediastop.com/" },
+              { "@type": "ListItem", "position": 2, "name": "About", "item": "https://hivemediastop.com/about" }
+            ]
+          }
+        }}
       />
       <section className="pt-4 pb-10 space-y-6 max-w-3xl">
         <h1 className="text-2xl sm:text-3xl font-semibold mb-2">About Hive Media</h1>

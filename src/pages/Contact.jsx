@@ -7,6 +7,19 @@ export default function Contact() {
       <SeoHead
         title="Contact"
         description="Contact Hive Media to discuss performance marketing, web development or internal tools for your service business."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact | Hive Media",
+          "url": "https://hivemediastop.com/contact",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hivemediastop.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://hivemediastop.com/contact" }
+            ]
+          }
+        }}
       />
       <section className="pt-4 pb-10 grid gap-8 md:grid-cols-[3fr,2fr] items-start">
         <div>

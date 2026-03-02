@@ -9,6 +9,8 @@
       name="description"
       content="Hive Media is a digital growth agency helping service businesses acquire more leads through performance marketing, web development, and automation."
     />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Hive Media | Digital Growth Agency" />
     <meta
       property="og:description"
@@ -16,9 +18,102 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hivemediastop.com/" />
-    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image" content="https://hivemediastop.com/og-image.jpg" />
+    <meta property="og:site_name" content="Hive Media" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hive Media | Digital Growth Agency" />
+    <meta name="twitter:description" content="Performance-focused digital marketing and web development for growing service businesses." />
+    <meta name="twitter:image" content="https://hivemediastop.com/og-image.jpg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://hivemediastop.com/" />
+
+    <!-- Preconnect for Google Fonts (Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#020617" />
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Hive Media",
+      "url": "https://hivemediastop.com",
+      "logo": "https://hivemediastop.com/logo-hive.png",
+      "description": "Digital growth agency helping service businesses acquire and close more leads through performance marketing, web development and internal tools.",
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://hivemediastop.com/contact",
+        "availableLanguage": ["English", "Spanish"]
+      },
+      "knowsAbout": [
+        "Google Ads",
+        "Performance Marketing",
+        "Web Development",
+        "SEO",
+        "Lead Generation",
+        "Marketing Automation"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Marketing Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Google Ads & Performance Marketing",
+              "description": "Campaign design, conversion tracking, and ongoing optimization focused on qualified lead generation for service businesses."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Websites & Landing Pages",
+              "description": "Fast, modern websites built with React, Vite and Tailwind for SEO, clarity and conversions."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Fundamentals",
+              "description": "Technical, on-page and local SEO to align website structure and content with search intent."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Internal Tools & Automation",
+              "description": "Custom CRM-style web apps for lead management, quotes, invoices and operations."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Analytics & Reporting",
+              "description": "Google Analytics, Tag Manager setup, event tracking and custom reporting dashboards."
+            }
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body class="bg-slate-950 text-slate-50">
     <div id="root"></div>

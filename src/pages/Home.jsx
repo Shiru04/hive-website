@@ -39,6 +39,24 @@ export default function Home() {
       <SeoHead
         title="Digital Marketing & Web Development Agency"
         description="Hive Media is a digital growth agency helping service businesses acquire and close more leads through performance marketing, web development and internal tools."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Digital Marketing & Web Development Agency | Hive Media",
+          "description": "Hive Media is a digital growth agency helping service businesses acquire and close more leads through performance marketing, web development and internal tools.",
+          "url": "https://hivemediastop.com/",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hivemediastop.com/"
+              }
+            ]
+          }
+        }}
       />
       <Hero />
 

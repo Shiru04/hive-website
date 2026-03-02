@@ -82,6 +82,19 @@ export default function Services() {
       <SeoHead
         title="Services"
         description="Explore Hive Media's services: performance marketing, websites, SEO, analytics and internal tools for service-based businesses."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Services | Hive Media",
+          "url": "https://hivemediastop.com/services",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hivemediastop.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://hivemediastop.com/services" }
+            ]
+          }
+        }}
       />
       <section className="pt-4 pb-10">
         <div className="mb-6 max-w-3xl">

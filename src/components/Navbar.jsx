@@ -28,6 +28,8 @@ export default function Navbar() {
             src={LogoHive}
             alt="Hive Media logo"
             className="h-10 md:h-12 w-auto object-contain"
+            width="132"
+            height="60"
           />
         </Link>
 
