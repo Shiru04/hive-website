@@ -31,6 +31,7 @@ export default function SeoHead({
   ogImage = "/og-image.jpg",
   ogType = "website",
   schema = null,
+  noindex = false,
 }) {
   const location = useLocation();
 
@@ -45,6 +46,9 @@ export default function SeoHead({
     const absoluteOgImage = ogImage.startsWith("http")
       ? ogImage
       : `${SITE_URL}${ogImage}`;
+
+    // Robots
+    upsertMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
 
     // Standard meta
     upsertMeta("name", "description", description);
@@ -89,7 +93,7 @@ export default function SeoHead({
       );
       if (el) el.remove();
     };
-  }, [title, description, ogImage, ogType, schema, location.pathname]);
+  }, [title, description, ogImage, ogType, schema, noindex, location.pathname]);
 
   return null;
 }
