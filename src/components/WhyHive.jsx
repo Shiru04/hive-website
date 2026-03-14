@@ -25,16 +25,16 @@ export default function WhyHive() {
           <span className="text-hive-yellow">Hive Media?</span>
         </h2>
         <p className="text-base text-slate-300">
-          We act as your technical and marketing partner, not just an ad
-          vendor. Our goal is to build a predictable lead and revenue
-          engine, step by step.
+          We don't just run ads—we build the entire system that turns
+          clicks into closed deals, so you can focus on running your
+          business while leads come in consistently.
         </p>
       </div>
       <div className="grid gap-5 md:grid-cols-3">
         {items.map((item) => (
           <div
             key={item.title}
-            className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-left"
+            className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-left hover:border-hive-yellow/50 transition-colors"
           >
             <h3 className="text-base font-semibold mb-1 text-slate-50">
               {item.title}

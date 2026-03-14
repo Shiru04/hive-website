@@ -16,13 +16,13 @@ const SERVICES = [
   },
   {
     title: "Websites & Landing Pages",
-    subtitle: "Built with React, Vite and Tailwind",
+    subtitle: "Instant load speed, zero lost visitors",
     description:
       "Your website should load fast, explain what you do clearly and make it easy for visitors to contact you. We design and build with that in mind.",
     bullets: [
       "UX strategy and information architecture",
       "Conversion-focused copywriting",
-      "Responsive UI with TailwindCSS",
+      "Responsive design on all devices",
       "Technical SEO best practices"
     ]
   },

@@ -22,12 +22,22 @@ export default function About() {
       />
       <section className="pt-4 pb-10 space-y-6 max-w-3xl">
         <h1 className="text-2xl sm:text-3xl font-semibold mb-2">About Hive Media</h1>
-        <p className="text-base text-slate-300">
-          Hive Media is a digital growth agency created by marketers and
-          developers who have spent years working directly with service
-          businesses—HVAC, construction, and other home services. We understand
-          what it means to depend on a consistent flow of real, qualified leads.
-        </p>
+
+        <div className="rounded-2xl border border-hive-yellow/30 bg-hive-yellow/5 p-5 text-base text-slate-200">
+          <p className="font-medium text-slate-50 mb-2">Why we exist</p>
+          <p>
+            We started Hive Media after seeing the same problem over and over:
+            9 out of 10 service businesses—HVAC, roofing, construction—were
+            burning money on ads that generated clicks but not real customers.
+            Agencies would report on impressions and CTR, but nobody was asking
+            "how many of those clicks turned into booked jobs?"
+          </p>
+          <p className="mt-2">
+            We built Hive to answer that question and fix the entire pipeline
+            from the ad click to the closed deal.
+          </p>
+        </div>
+
         <p className="text-base text-slate-300">
           We combine performance marketing, modern web development and internal
           tools to build predictable systems. Our philosophy is simple:
@@ -38,7 +48,7 @@ export default function About() {
         </p>
 
         <div className="grid gap-4 sm:grid-cols-3">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-300">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-300 hover:border-hive-yellow/50 transition-colors">
             <p className="text-hive-yellow text-base font-semibold mb-1">
               Technical and marketing in one place
             </p>
@@ -47,7 +57,7 @@ export default function About() {
               that needs to be written to make it real.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-300">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-300 hover:border-hive-yellow/50 transition-colors">
             <p className="text-hive-yellow text-base font-semibold mb-1">
               Transparent communication
             </p>
@@ -56,7 +66,7 @@ export default function About() {
               performing—good or bad.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-300">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-300 hover:border-hive-yellow/50 transition-colors">
             <p className="text-hive-yellow text-base font-semibold mb-1">
               Long-term partnerships
             </p>

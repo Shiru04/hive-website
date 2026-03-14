@@ -20,7 +20,7 @@ export default function Home() {
     },
     {
       title: "Websites that convert",
-      subtitle: "React, Vite, Tailwind",
+      subtitle: "Instant load speed, built to sell",
       description:
         "Fast, modern websites built for SEO, clarity and conversions—not for awards. Every section has a job.",
       bullets: ["Information architecture", "UX & conversion copy", "Technical SEO"]
@@ -85,17 +85,31 @@ export default function Home() {
         <div className="grid gap-8 md:grid-cols-[3fr,2fr] items-start">
           <div>
             <h2 className="text-xl sm:text-2xl font-semibold mb-2">
-              Let’s design your next growth step.
+              Ready to stop guessing and start growing?
             </h2>
             <p className="text-base text-slate-300 mb-4">
               Whether you need to fix tracking, clean up your Google Ads,
               redesign your website or build an internal tool, we can help you
               prioritize what will move the needle first.
             </p>
-            <ul className="text-sm text-slate-400 space-y-1 mb-4">
-              <li>• Honest audit of your current marketing and tracking</li>
-              <li>• Clear roadmap for the next 90 days</li>
-              <li>• No long-term contracts, just work that performs</li>
+            <ul className="text-sm space-y-2 mb-4">
+              <li className="flex items-center gap-2">
+                <span className="text-hive-yellow font-bold">✓</span>
+                <span className="text-slate-300">Honest audit of your current marketing and tracking</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-hive-yellow font-bold">✓</span>
+                <span className="text-slate-300">Clear roadmap for the next 90 days</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-hive-yellow font-bold">✓</span>
+                <span className="inline-flex items-center gap-2 text-slate-300">
+                  No long-term contracts, just work that performs
+                  <span className="inline-flex items-center rounded-full bg-hive-yellow/15 border border-hive-yellow/40 px-2 py-0.5 text-xs font-semibold text-hive-yellow">
+                    Zero risk
+                  </span>
+                </span>
+              </li>
             </ul>
           </div>
           <div>

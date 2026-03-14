@@ -6,16 +6,16 @@ export default function Hero() {
       <div className="grid gap-10 lg:grid-cols-[3fr,2fr] items-center">
         <div>
           <p className="inline-flex items-center rounded-full border border-slate-700 bg-slate-900 px-3 py-1 text-sm font-medium text-slate-300 mb-4">
-            Digital Growth for Service Businesses
+            Growth systems for service businesses
           </p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Turn traffic into{" "}
-            <span className="text-hive-yellow">profitable, qualified leads.</span>
+            We scale your service business so{" "}
+            <span className="text-hive-yellow">prospects come to you.</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-xl mb-6">
-            Hive Media combines performance marketing, high-converting websites
-            and internal automations to help service-based businesses grow
-            without guessing or burning ad budget.
+            Stop chasing clients. We build the marketing engine, the website
+            and the internal systems so qualified leads find you and your team
+            closes them faster.
           </p>
           <div className="flex flex-wrap gap-3 mb-4">
             <Link
@@ -26,7 +26,7 @@ export default function Hero() {
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center rounded-full border border-slate-700 bg-slate-900 px-5 py-2.5 text-base font-medium text-slate-100 hover:border-hive-yellow/70"
+              className="inline-flex items-center rounded-full border border-hive-yellow/60 bg-slate-900 px-5 py-2.5 text-base font-semibold text-hive-yellow hover:bg-hive-yellow hover:text-slate-950 transition-colors"
             >
               View all services
             </Link>
@@ -42,7 +42,7 @@ export default function Hero() {
             </p>
             <ul className="space-y-2 text-sm text-slate-200">
               <li>• High-intent lead generation via Google Ads</li>
-              <li>• Conversion-first websites built with React & Vite</li>
+              <li>• Websites that load instantly and convert visitors</li>
               <li>• Tracking, analytics and reporting that make sense</li>
               <li>• Internal tools to manage leads, quotes and invoices</li>
             </ul>
