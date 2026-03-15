@@ -1,80 +1,7 @@
 import SeoHead from "../seo/SeoHead.jsx";
 import ServiceCard from "../components/ServiceCard.jsx";
-
-const SERVICES = [
-  {
-    title: "Google Ads & Performance Marketing",
-    subtitle: "Search, Local Services and Display (when it makes sense)",
-    description:
-      "We design, implement and maintain campaigns focused on qualified leads, not just clicks. Every campaign is tied to a clear business objective.",
-    bullets: [
-      "Account structure and cleanup",
-      "Conversion & call tracking setup",
-      "Bid and budget optimization",
-      "Monthly reporting with insights and actions"
-    ]
-  },
-  {
-    title: "Websites & Landing Pages",
-    subtitle: "Instant load speed, zero lost visitors",
-    description:
-      "Your website should load fast, explain what you do clearly and make it easy for visitors to contact you. We design and build with that in mind.",
-    bullets: [
-      "UX strategy and information architecture",
-      "Conversion-focused copywriting",
-      "Responsive design on all devices",
-      "Technical SEO best practices"
-    ]
-  },
-  {
-    title: "SEO Fundamentals",
-    subtitle: "Technical, on-page and local",
-    description:
-      "We align your website structure, content and metadata so search engines understand your business and send the right people to you.",
-    bullets: [
-      "Keyword and intent research",
-      "On-page optimization and metadata",
-      "Internal linking and structure",
-      "Local SEO for service areas"
-    ]
-  },
-  {
-    title: "Internal Tools & Operations Hub",
-    subtitle: "Custom CRM-style tools for service businesses",
-    description:
-      "We build internal web apps to manage leads, projects, quotes and invoices so your team has one place to operate.",
-    bullets: [
-      "Lead and client management",
-      "Quotes and invoices",
-      "Task and project tracking",
-      "Role-based access and security"
-    ]
-  },
-  {
-    title: "Analytics & Reporting",
-    subtitle: "Make decisions with clear data",
-    description:
-      "We configure tracking and reporting so you can understand where your leads come from and how campaigns perform.",
-    bullets: [
-      "Google Analytics & Tag Manager setup",
-      "Event and conversion tracking",
-      "Lead source attribution",
-      "Custom, easy-to-read reports"
-    ]
-  },
-  {
-    title: "Consulting & Technical Support",
-    subtitle: "For teams that already run campaigns",
-    description:
-      "If your team already runs ads or manages the website, we can come in as technical and strategy support.",
-    bullets: [
-      "Audits and action plans",
-      "Implementation support",
-      "Code-level troubleshooting",
-      "Ongoing advisory"
-    ]
-  }
-];
+import { Link } from "react-router-dom";
+import { SERVICES } from "../data/services.js";
 
 export default function Services() {
   return (
@@ -96,23 +23,46 @@ export default function Services() {
           }
         }}
       />
-      <section className="pt-4 pb-10">
-        <div className="mb-6 max-w-3xl">
-          <h1 className="text-2xl sm:text-3xl font-semibold mb-2">
+      <section className="pt-8 pb-14">
+        <div className="mb-10 max-w-3xl">
+          <p className="inline-flex items-center gap-2 rounded-full border border-hive-yellow/30 bg-hive-yellow/5 px-4 py-1.5 text-sm font-medium text-hive-yellow mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-hive-yellow" />
+            Our services
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-3">
             Services built around{" "}
             <span className="text-hive-yellow">measurable growth.</span>
           </h1>
-          <p className="text-base text-slate-300">
+          <p className="text-lg text-slate-300 leading-relaxed">
             Every service we offer exists to move one of three levers: more
             qualified traffic, better conversion rates, and stronger internal
             systems to handle the demand.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {SERVICES.map((service) => (
-            <ServiceCard key={service.title} {...service} />
+            <ServiceCard key={service.slug} slug={service.slug} {...service} />
           ))}
+        </div>
+
+        {/* CTA banner */}
+        <div className="mt-14 rounded-2xl border border-slate-700/80 bg-gradient-to-r from-slate-900 via-slate-900/95 to-hive-yellow/5 p-8 sm:p-10 text-center">
+          <h2 className="text-xl sm:text-2xl font-bold mb-3">
+            Not sure which service you need?
+          </h2>
+          <p className="text-base text-slate-300 max-w-xl mx-auto mb-6">
+            Book a free strategy call and we'll help you figure out what will move the needle for your business right now.
+          </p>
+          <Link
+            to="/contact"
+            className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition-all"
+          >
+            Book a free strategy call
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
         </div>
       </section>
     </>

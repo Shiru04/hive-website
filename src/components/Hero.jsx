@@ -1,69 +1,97 @@
 import { Link } from "react-router-dom";
+import remoteCallImg from "../assets/remote-call.webp";
 
 export default function Hero() {
   return (
-    <section className="pt-4 pb-12 sm:pt-6 sm:pb-16 lg:pt-10">
-      <div className="grid gap-10 lg:grid-cols-[3fr,2fr] items-center">
+    <section className="relative pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-hive-yellow/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-sky-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="grid gap-12 lg:grid-cols-[3fr,2fr] items-center">
         <div>
-          <p className="inline-flex items-center rounded-full border border-slate-700 bg-slate-900 px-3 py-1 text-sm font-medium text-slate-300 mb-4">
+          <p className="inline-flex items-center gap-2 rounded-full border border-hive-yellow/30 bg-hive-yellow/5 px-4 py-1.5 text-sm font-medium text-hive-yellow mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-hive-yellow animate-pulse" />
             Growth systems for service businesses
           </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
             We scale your service business so{" "}
-            <span className="text-hive-yellow">prospects come to you.</span>
+            <span className="text-hive-yellow relative">
+              prospects come to you.
+              <span className="absolute -bottom-1 left-0 w-full h-1 bg-hive-yellow/30 rounded-full" />
+            </span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 max-w-xl mb-6">
+          <p className="text-lg sm:text-xl text-slate-300 max-w-xl mb-8 leading-relaxed">
             Stop chasing clients. We build the marketing engine, the website
             and the internal systems so qualified leads find you and your team
             closes them faster.
           </p>
-          <div className="flex flex-wrap gap-3 mb-4">
+          <div className="flex flex-wrap gap-4 mb-8">
             <Link
               to="/contact"
-              className="inline-flex items-center rounded-full border border-hive-yellow bg-hive-yellow px-5 py-2.5 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105"
+              className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition-all"
             >
               Book a free strategy call
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center rounded-full border border-hive-yellow/60 bg-slate-900 px-5 py-2.5 text-base font-semibold text-hive-yellow hover:bg-hive-yellow hover:text-slate-950 transition-colors"
+              className="inline-flex items-center rounded-full border border-slate-600 bg-slate-900/80 px-6 py-3 text-base font-semibold text-slate-200 hover:border-hive-yellow/60 hover:text-hive-yellow transition-colors"
             >
               View all services
             </Link>
           </div>
 
+          {/* Stats row */}
+          <div className="flex flex-wrap gap-8 pt-6 border-t border-slate-800/60">
+            <div>
+              <div className="text-2xl font-bold text-hive-yellow">+40%</div>
+              <div className="text-sm text-slate-400">Avg. conversion lift</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-slate-50">Full-funnel</div>
+              <div className="text-sm text-slate-400">Click to closed deal</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-slate-50">No lock-in</div>
+              <div className="text-sm text-slate-400">Month-to-month contracts</div>
+            </div>
+          </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-tr from-hive-yellow/10 via-transparent to-sky-500/10 blur-3xl" />
-          <div className="relative rounded-2xl border border-slate-800 bg-slate-900/80 p-5 shadow-xl">
-            <p className="text-sm font-semibold text-hive-yellow mb-2">
-              What we focus on
-            </p>
-            <ul className="space-y-2 text-sm text-slate-200">
-              <li>• High-intent lead generation via Google Ads</li>
-              <li>• Websites that load instantly and convert visitors</li>
-              <li>• Tracking, analytics and reporting that make sense</li>
-              <li>• Internal tools to manage leads, quotes and invoices</li>
-            </ul>
-            <div className="mt-4 grid grid-cols-3 gap-3 text-[11px]">
-              <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-3">
-                <div className="text-base font-semibold text-hive-yellow">
-                  +40%
+        <div className="relative hidden lg:block">
+          <div className="absolute -inset-4 bg-gradient-to-tr from-hive-yellow/10 via-transparent to-sky-500/10 blur-3xl pointer-events-none" />
+          <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl">
+            <img
+              src={remoteCallImg}
+              alt="Strategy call with a client"
+              className="w-full h-[420px] object-cover object-center"
+              loading="eager"
+              width="600"
+              height="420"
+              fetchPriority="high"
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+
+            {/* Floating card over image */}
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <div className="rounded-xl border border-slate-700/60 bg-slate-950/80 backdrop-blur-md p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs text-slate-400">Lead performance</span>
+                  <span className="text-xs text-emerald-400 font-medium">+12% this month</span>
                 </div>
-                <div className="text-slate-400">Average conversion rate lift</div>
-              </div>
-              <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-3">
-                <div className="text-base font-semibold text-hive-yellow">
-                  Full-funnel
+                <div className="flex items-end gap-1 h-10">
+                  {[35, 45, 30, 55, 40, 65, 50, 70, 60, 80, 75, 90].map((h, i) => (
+                    <div
+                      key={i}
+                      className="flex-1 rounded-sm bg-hive-yellow/25 hover:bg-hive-yellow/50 transition-colors"
+                      style={{ height: `${h}%` }}
+                    />
+                  ))}
                 </div>
-                <div className="text-slate-400">From click to closed deal</div>
-              </div>
-              <div className="rounded-xl border border-slate-700 bg-slate-950/60 p-3">
-                <div className="text-base font-semibold text-hive-yellow">
-                  Owner-friendly
-                </div>
-                <div className="text-slate-400">Clear numbers, clear actions</div>
               </div>
             </div>
           </div>

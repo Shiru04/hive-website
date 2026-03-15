@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
     <title>Hive Media | Digital Growth Agency</title>
     <meta
       name="description"
@@ -19,6 +20,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hivemediastop.com/" />
     <meta property="og:image" content="https://hivemediastop.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Hive Media" />
     <meta property="og:locale" content="en_US" />
 
@@ -42,6 +45,12 @@
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#020617" />
 
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="DO-01" />
+    <meta name="geo.placename" content="Santo Domingo" />
+    <meta name="geo.position" content="18.4861;-69.9312" />
+    <meta name="ICBM" content="18.4861, -69.9312" />
+
     <!-- Organization Schema -->
     <script type="application/ld+json">
     {
@@ -52,6 +61,21 @@
       "logo": "https://hivemediastop.com/logo-hive.png",
       "description": "Digital growth agency helping service businesses acquire and close more leads through performance marketing, web development and internal tools.",
       "sameAs": [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santo Domingo",
+        "addressCountry": "DO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "18.4861",
+        "longitude": "-69.9312"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Dominican Republic" },
+        { "@type": "Country", "name": "United States" }
+      ],
+      "priceRange": "$$",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
@@ -75,6 +99,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Google Ads & Performance Marketing",
+              "url": "https://hivemediastop.com/services/google-ads",
               "description": "Campaign design, conversion tracking, and ongoing optimization focused on qualified lead generation for service businesses."
             }
           },
@@ -83,6 +108,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Websites & Landing Pages",
+              "url": "https://hivemediastop.com/services/websites",
               "description": "Fast, modern websites built with React, Vite and Tailwind for SEO, clarity and conversions."
             }
           },
@@ -91,6 +117,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "SEO Fundamentals",
+              "url": "https://hivemediastop.com/services/seo",
               "description": "Technical, on-page and local SEO to align website structure and content with search intent."
             }
           },
@@ -99,6 +126,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Internal Tools & Automation",
+              "url": "https://hivemediastop.com/services/internal-tools",
               "description": "Custom CRM-style web apps for lead management, quotes, invoices and operations."
             }
           },
@@ -107,6 +135,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Analytics & Reporting",
+              "url": "https://hivemediastop.com/services/analytics",
               "description": "Google Analytics, Tag Manager setup, event tracking and custom reporting dashboards."
             }
           }

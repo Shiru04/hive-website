@@ -6,6 +6,11 @@
   color-scheme: dark;
 }
 
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-slate-950 text-slate-50 font-sans antialiased;
 }
@@ -22,8 +27,16 @@ main {
   @apply max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-html {
-  font-size: 18px; /* default is 16px */
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid #facc15;
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(250, 204, 21, 0.25);
+  color: #f8fafc;
 }
 
 @media (min-width: 1600px) {

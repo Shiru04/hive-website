@@ -200,7 +200,7 @@ function renderTipTapNode(node, idx = 0) {
             className="w-full rounded-2xl border border-slate-800"
           />
           {node.attrs?.alt && (
-            <figcaption className="text-xs text-slate-500 mt-1">
+            <figcaption className="text-xs text-slate-400 mt-1">
               {node.attrs.alt}
             </figcaption>
           )}
@@ -396,7 +396,7 @@ function renderTipTapNode(node, idx = 0) {
                   className="w-full rounded-xl border border-slate-800 aspect-square object-cover"
                 />
                 {img.caption && (
-                  <figcaption className="text-xs text-slate-500 mt-1">
+                  <figcaption className="text-xs text-slate-400 mt-1">
                     {img.caption}
                   </figcaption>
                 )}
@@ -437,7 +437,7 @@ function renderTipTapNode(node, idx = 0) {
             className="w-full rounded-2xl border border-slate-800"
           />
           {a.caption && (
-            <figcaption className="text-xs text-slate-500 mt-1">
+            <figcaption className="text-xs text-slate-400 mt-1">
               {a.caption}
             </figcaption>
           )}

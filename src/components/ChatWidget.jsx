@@ -54,7 +54,7 @@ function SendIcon({ className = "w-5 h-5" }) {
 
 function TypingDots() {
   return (
-    <div className="flex items-center gap-1 px-3 py-2">
+    <div className="flex items-center gap-1 px-3 py-2" aria-live="polite" aria-label="Agent is typing">
       {[0, 1, 2].map((i) => (
         <span
           key={i}
@@ -117,7 +117,9 @@ function IntroForm({ onStart }) {
         Hi there! Enter your name to start a conversation with our team.
       </p>
 
+      <label htmlFor="chat-name" className="sr-only">Your name</label>
       <input
+        id="chat-name"
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -176,6 +178,15 @@ export default function ChatWidget() {
   useEffect(() => {
     if (open) setUnread(0);
   }, [open]);
+
+  /* Allow other components to open the chat via a custom event */
+  useEffect(() => {
+    function handleOpenChat() {
+      setOpen(true);
+    }
+    window.addEventListener("open-chat", handleOpenChat);
+    return () => window.removeEventListener("open-chat", handleOpenChat);
+  }, []);
 
   /* Focus input when chat becomes active */
   useEffect(() => {
@@ -294,7 +305,9 @@ export default function ChatWidget() {
             onSubmit={handleSend}
             className="flex items-center gap-2 border-t border-slate-800 bg-slate-900 px-3 py-2.5 shrink-0"
           >
+            <label htmlFor="chat-message" className="sr-only">Type a message</label>
             <input
+              id="chat-message"
               ref={inputRef}
               type="text"
               value={input}
