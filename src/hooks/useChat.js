@@ -12,6 +12,7 @@ export function useChat() {
     () => localStorage.getItem(STORAGE_KEY)
   );
   const [status, setStatus] = useState("idle");
+  const [agentName, setAgentName] = useState(null);
   const socketRef = useRef(null);
   const typingTimeoutRef = useRef(null);
 
@@ -61,8 +62,14 @@ export function useChat() {
       typingTimeoutRef.current = setTimeout(() => setIsTyping(false), 3000);
     });
 
-    socket.on("chat:agent_joined", () => {
-      // Optional: show notification
+    socket.on("chat:agent_joined", ({ agentName: name }) => {
+      setAgentName(name);
+      setMessages(prev => [...prev, {
+        _id: `system-joined-${Date.now()}`,
+        from: "system",
+        text: `${name} has joined the chat`,
+        createdAt: new Date().toISOString(),
+      }]);
     });
 
     socket.on("chat:closed", ({ message }) => {
@@ -141,6 +148,7 @@ export function useChat() {
     isTyping,
     status,
     conversationId,
+    agentName,
     startChat,
     sendMessage,
     emitTyping,

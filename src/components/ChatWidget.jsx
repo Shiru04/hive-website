@@ -70,7 +70,19 @@ function TypingDots() {
 /* Message bubble                                                      */
 /* ------------------------------------------------------------------ */
 
+function SystemMessage({ message }) {
+  return (
+    <div className="flex justify-center py-1">
+      <p className="text-[11px] text-slate-500 bg-slate-800/50 rounded-full px-3 py-1">
+        {message.text}
+      </p>
+    </div>
+  );
+}
+
 function MessageBubble({ message }) {
+  if (message.from === "system") return <SystemMessage message={message} />;
+
   const isVisitor = message.from === "visitor";
   const time = new Date(message.createdAt).toLocaleTimeString([], {
     hour: "2-digit",
@@ -86,6 +98,11 @@ function MessageBubble({ message }) {
             : "bg-slate-800 text-slate-100 rounded-bl-sm"
         }`}
       >
+        {!isVisitor && message.agentName && (
+          <p className="text-[10px] font-medium text-hive-yellow/70 mb-0.5">
+            {message.agentName}
+          </p>
+        )}
         <p className="whitespace-pre-wrap break-words">{message.text}</p>
         <p
           className={`mt-1 text-[10px] leading-none ${
@@ -147,6 +164,7 @@ export default function ChatWidget() {
     messages,
     isTyping,
     status,
+    agentName,
     startChat,
     sendMessage,
     emitTyping,
@@ -245,7 +263,9 @@ export default function ChatWidget() {
             <div>
               <p className="text-sm font-semibold text-slate-50">Hive Media</p>
               <p className="text-[11px] text-slate-400">
-                {status === "active" ? "Online" : "Chat with us"}
+                {status === "active"
+                  ? agentName ? `Chatting with ${agentName}` : "Online"
+                  : "Chat with us"}
               </p>
             </div>
           </div>
