@@ -3,8 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import portalClient from "../../api/portalClient.js";
 import { usePortalConfig } from "../../hooks/usePortalConfig.js";
 
-const PUBLIC_COMPANY_ID = import.meta.env.VITE_PUBLIC_COMPANY_ID || "";
-
 export default function PortalRegister() {
   const { config } = usePortalConfig();
   const navigate = useNavigate();
@@ -28,10 +26,7 @@ export default function PortalRegister() {
     setError("");
     setLoading(true);
     try {
-      const { data } = await portalClient.post("/portal/auth/register", {
-        ...form,
-        companyId: PUBLIC_COMPANY_ID,
-      });
+      const { data } = await portalClient.post("/portal/auth/register", form);
       localStorage.setItem("portal_token", data.token);
       localStorage.setItem("portal_user", JSON.stringify(data.user));
       navigate("/portal");
