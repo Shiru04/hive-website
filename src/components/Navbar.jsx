@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import LogoHive from "../assets/logo-hive.png";
+import LogoHive from "../assets/logo-hive.webp";
 
 const navLinkClasses =
   "text-base font-medium transition-colors hover:text-hive-yellow px-3 py-2 rounded-lg";

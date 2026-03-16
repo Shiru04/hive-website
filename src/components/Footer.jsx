@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import LogoHive from "../assets/logo-hive.png";
+import LogoHive from "../assets/logo-hive.webp";
 
 export default function Footer() {
   const year = new Date().getFullYear();

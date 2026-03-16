@@ -37,19 +37,31 @@
     <!-- Preconnect for Google Fonts (Montserrat) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    </noscript>
 
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#020617" />
 
+    <!-- Critical CSS: prevent FOUC and speed up FCP/LCP -->
+    <style>
+      body{margin:0;background:#020617;color:#f8fafc;font-family:Montserrat,system-ui,-apple-system,sans-serif}
+      #root{min-height:100vh}
+    </style>
+
     <!-- Geo targeting -->
-    <meta name="geo.region" content="DO-01" />
-    <meta name="geo.placename" content="Santo Domingo" />
-    <meta name="geo.position" content="18.4861;-69.9312" />
-    <meta name="ICBM" content="18.4861, -69.9312" />
+    <meta name="geo.region" content="GT" />
+    <meta name="geo.placename" content="Guatemala City" />
+    <meta name="geo.position" content="14.6349;-90.5069" />
+    <meta name="ICBM" content="14.6349, -90.5069" />
 
     <!-- Organization Schema -->
     <script type="application/ld+json">
@@ -63,16 +75,16 @@
       "sameAs": [],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Santo Domingo",
-        "addressCountry": "DO"
+        "addressLocality": "Guatemala City",
+        "addressCountry": "GT"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "18.4861",
-        "longitude": "-69.9312"
+        "latitude": "14.6349",
+        "longitude": "-90.5069"
       },
       "areaServed": [
-        { "@type": "Country", "name": "Dominican Republic" },
+        { "@type": "Country", "name": "Guatemala" },
         { "@type": "Country", "name": "United States" }
       ],
       "priceRange": "$$",
