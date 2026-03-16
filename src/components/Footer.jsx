@@ -26,25 +26,25 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold text-slate-200 mb-3">Services</h4>
+            <p className="text-sm font-semibold text-slate-200 mb-3">Services</p>
             <ul className="space-y-2 text-sm text-slate-400">
               <li><Link to="/services/google-ads" className="hover:text-hive-yellow transition-colors">Google Ads</Link></li>
               <li><Link to="/services/websites" className="hover:text-hive-yellow transition-colors">Websites</Link></li>
               <li><Link to="/services/seo" className="hover:text-hive-yellow transition-colors">SEO</Link></li>
               <li><Link to="/services/internal-tools" className="hover:text-hive-yellow transition-colors">Internal Tools</Link></li>
-              <li><Link to="/services" className="hover:text-hive-yellow transition-colors text-slate-500">All services</Link></li>
+              <li><Link to="/services" className="hover:text-hive-yellow transition-colors text-slate-400">All services</Link></li>
             </ul>
           </div>
 
           {/* Company & Industries */}
           <div>
-            <h4 className="text-sm font-semibold text-slate-200 mb-3">Company</h4>
+            <p className="text-sm font-semibold text-slate-200 mb-3">Company</p>
             <ul className="space-y-2 text-sm text-slate-400">
               <li><Link to="/about" className="hover:text-hive-yellow transition-colors">About</Link></li>
               <li><Link to="/blog" className="hover:text-hive-yellow transition-colors">Blog</Link></li>
               <li><Link to="/contact" className="hover:text-hive-yellow transition-colors">Contact</Link></li>
             </ul>
-            <h4 className="text-sm font-semibold text-slate-200 mb-3 mt-5">Industries</h4>
+            <p className="text-sm font-semibold text-slate-200 mb-3 mt-5">Industries</p>
             <ul className="space-y-2 text-sm text-slate-400">
               <li><Link to="/industries/construction" className="hover:text-hive-yellow transition-colors">Construction</Link></li>
               <li><Link to="/industries/hvac" className="hover:text-hive-yellow transition-colors">HVAC</Link></li>
@@ -54,7 +54,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="text-sm font-semibold text-slate-200 mb-3">Get in touch</h4>
+            <p className="text-sm font-semibold text-slate-200 mb-3">Get in touch</p>
             <div className="space-y-2 text-sm text-slate-400">
               <Link to="/contact" className="flex items-center gap-2 hover:text-hive-yellow transition-colors">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">

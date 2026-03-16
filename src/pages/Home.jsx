@@ -127,7 +127,7 @@ export default function Home() {
             }
           ].map((item) => (
             <div key={item.step} className="relative text-center sm:text-left">
-              <div className="text-4xl font-bold text-hive-yellow/15 mb-2">{item.step}</div>
+              <div className="text-4xl font-bold text-hive-yellow/25 mb-2">{item.step}</div>
               <h3 className="text-base font-semibold text-slate-50 mb-2">{item.title}</h3>
               <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
             </div>
