@@ -79,7 +79,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-slate-400">
           <p>&copy; {year} Hive Media. All rights reserved.</p>
-          <p>Santo Domingo, Dominican Republic</p>
+          <div className="flex items-center gap-4">
+            <Link to="/portal/login" className="hover:text-hive-yellow transition-colors">Client Portal</Link>
+            <span className="text-slate-700">|</span>
+            <p>Santo Domingo, Dominican Republic</p>
+          </div>
         </div>
       </div>
     </footer>
