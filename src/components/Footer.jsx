@@ -82,7 +82,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link to="/portal/login" className="hover:text-hive-yellow transition-colors">Client Portal</Link>
             <span className="text-slate-700">|</span>
-            <p>Santo Domingo, Dominican Republic</p>
+            <p>Guatemala</p>
           </div>
         </div>
       </div>
