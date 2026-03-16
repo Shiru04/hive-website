@@ -40,7 +40,9 @@ const MIME = {
   ".woff": "font/woff",
 };
 
-// Simple static server that falls back to index.html (SPA behavior)
+// Save the original index.html before first route overwrites it
+let originalIndexHtml = null;
+
 function startServer() {
   return new Promise((res) => {
     const server = createServer((req, reply) => {
@@ -48,7 +50,10 @@ function startServer() {
       let filePath = join(DIST, url);
 
       if (!existsSync(filePath) || !extname(filePath)) {
-        filePath = join(DIST, "index.html");
+        // SPA fallback — always serve the original index.html
+        reply.writeHead(200, { "Content-Type": "text/html" });
+        reply.end(originalIndexHtml);
+        return;
       }
 
       try {
@@ -66,19 +71,26 @@ function startServer() {
 }
 
 async function prerender() {
+  // Save original index.html before we overwrite it with prerendered version
+  originalIndexHtml = readFileSync(join(DIST, "index.html"), "utf8");
+
   console.log("[prerender] Starting static server...");
   const server = await startServer();
 
   console.log("[prerender] Launching browser...");
   const browser = await puppeteer.launch({
     headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-gpu",
+    ],
   });
 
   for (const route of ROUTES) {
     const page = await browser.newPage();
 
-    // Block external requests that slow down rendering (fonts, analytics, etc.)
     await page.setRequestInterception(true);
     page.on("request", (req) => {
       const url = req.url();
@@ -98,23 +110,15 @@ async function prerender() {
     console.log(`[prerender] Rendering ${route}...`);
 
     await page.goto(url, { waitUntil: "networkidle0", timeout: 15000 });
-
-    // Wait a moment for React to fully render
     await page.waitForSelector("h1", { timeout: 5000 }).catch(() => {});
 
-    // Get the rendered HTML
     let html = await page.content();
 
-    // Clean up: remove scripts that would cause React to re-mount
-    // We keep them — React hydrates gracefully on top of existing DOM
-
-    // Write to the appropriate path
     const dir = route === "/" ? DIST : join(DIST, route);
     if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
 
-    const outFile = join(dir, "index.html");
-    writeFileSync(outFile, html);
-    console.log(`[prerender] Saved ${outFile}`);
+    writeFileSync(join(dir, "index.html"), html);
+    console.log(`[prerender] ✓ ${route}`);
 
     await page.close();
   }
