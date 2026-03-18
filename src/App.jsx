@@ -19,6 +19,10 @@ const NewTicket = lazy(() => import("./pages/portal/NewTicket.jsx"));
 const PortalAccount = lazy(() => import("./pages/portal/PortalAccount.jsx"));
 const PortalForgotPassword = lazy(() => import("./pages/portal/PortalForgotPassword.jsx"));
 const PortalResetPassword = lazy(() => import("./pages/portal/PortalResetPassword.jsx"));
+const PortalInvoices = lazy(() => import("./pages/portal/PortalInvoices.jsx"));
+const PortalQuotations = lazy(() => import("./pages/portal/PortalQuotations.jsx"));
+const PortalProjects = lazy(() => import("./pages/portal/PortalProjects.jsx"));
+const PortalContracts = lazy(() => import("./pages/portal/PortalContracts.jsx"));
 
 function Fallback() {
   return (
@@ -65,6 +69,10 @@ export default function App() {
                   <Route path="tickets" element={<TicketsList />} />
                   <Route path="tickets/new" element={<NewTicket />} />
                   <Route path="tickets/:id" element={<TicketDetail />} />
+                  <Route path="invoices" element={<PortalInvoices />} />
+                  <Route path="quotations" element={<PortalQuotations />} />
+                  <Route path="projects" element={<PortalProjects />} />
+                  <Route path="contracts" element={<PortalContracts />} />
                   <Route path="account" element={<PortalAccount />} />
                 </Route>
               </Routes>

@@ -12,8 +12,11 @@ export default function PortalLayout() {
 
   const navItems = [
     { to: "/portal", label: "Dashboard", end: true },
-    { to: "/portal/tickets", label: "My Tickets" },
-    { to: "/portal/tickets/new", label: "New Ticket" },
+    { to: "/portal/tickets", label: "Tickets" },
+    { to: "/portal/invoices", label: "Invoices" },
+    { to: "/portal/quotations", label: "Quotations" },
+    { to: "/portal/projects", label: "Projects" },
+    { to: "/portal/contracts", label: "Contracts" },
     { to: "/portal/account", label: "Account" },
   ];
 
