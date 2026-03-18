@@ -17,6 +17,8 @@ const TicketsList = lazy(() => import("./pages/portal/TicketsList.jsx"));
 const TicketDetail = lazy(() => import("./pages/portal/TicketDetail.jsx"));
 const NewTicket = lazy(() => import("./pages/portal/NewTicket.jsx"));
 const PortalAccount = lazy(() => import("./pages/portal/PortalAccount.jsx"));
+const PortalForgotPassword = lazy(() => import("./pages/portal/PortalForgotPassword.jsx"));
+const PortalResetPassword = lazy(() => import("./pages/portal/PortalResetPassword.jsx"));
 
 function Fallback() {
   return (
@@ -52,6 +54,8 @@ export default function App() {
                 <Route path="login" element={<PortalLogin />} />
                 <Route path="register" element={<PortalRegister />} />
                 <Route path="setup" element={<PortalSetup />} />
+                <Route path="forgot-password" element={<PortalForgotPassword />} />
+                <Route path="reset-password" element={<PortalResetPassword />} />
                 <Route path="*" element={
                   <PortalProtectedRoute>
                     <PortalLayout />

@@ -68,6 +68,12 @@ export default function PortalLogin() {
             />
           </div>
 
+          <div className="flex justify-end">
+            <Link to="/portal/forgot-password" className="text-xs text-slate-500 hover:text-hive-yellow transition-colors">
+              Forgot password?
+            </Link>
+          </div>
+
           <button
             type="submit"
             disabled={loading}
