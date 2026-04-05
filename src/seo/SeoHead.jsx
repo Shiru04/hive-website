@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useLang } from "../hooks/useLang.js";
 
 const SITE_URL = "https://hivemediastop.com";
+const SUPPORTED_LANGS = ["en", "es", "de"];
+
+const OG_LOCALES = { en: "en_US", es: "es_ES", de: "de_DE" };
 
 function upsertMeta(attr, key, value) {
   if (!value) return;
@@ -14,7 +18,7 @@ function upsertMeta(attr, key, value) {
   meta.setAttribute("content", value);
 }
 
-function upsertLink(rel, href) {
+function upsertLink(rel, href, attrs = {}) {
   if (!href) return;
   let link = document.head.querySelector(`link[rel="${rel}"]`);
   if (!link) {
@@ -23,6 +27,24 @@ function upsertLink(rel, href) {
     document.head.appendChild(link);
   }
   link.setAttribute("href", href);
+  Object.entries(attrs).forEach(([k, v]) => link.setAttribute(k, v));
+}
+
+function upsertHreflang(hreflang, href) {
+  let link = document.head.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+  if (!link) {
+    link = document.createElement("link");
+    link.setAttribute("rel", "alternate");
+    link.setAttribute("hreflang", hreflang);
+    document.head.appendChild(link);
+  }
+  link.setAttribute("href", href);
+}
+
+function removeHreflangLinks() {
+  document.head
+    .querySelectorAll('link[rel="alternate"][hreflang]')
+    .forEach((el) => el.remove());
 }
 
 export default function SeoHead({
@@ -33,15 +55,17 @@ export default function SeoHead({
   schema = null,
 }) {
   const location = useLocation();
+  const { lang } = useLang();
 
   useEffect(() => {
     const baseTitle = "Hive Media";
     const fullTitle = title ? `${title} | ${baseTitle}` : baseTitle;
     document.title = fullTitle;
 
-    const url = SITE_URL + location.pathname;
+    // Strip the /:lang prefix to get the page path (e.g. /en/services → /services)
+    const pathWithoutLang = location.pathname.replace(/^\/[a-z]{2}(\/|$)/, "/") || "/";
+    const canonicalUrl = `${SITE_URL}/${lang}${pathWithoutLang === "/" ? "" : pathWithoutLang}`;
 
-    // Ensure og:image is always an absolute URL
     const absoluteOgImage = ogImage.startsWith("http")
       ? ogImage
       : `${SITE_URL}${ogImage}`;
@@ -54,9 +78,9 @@ export default function SeoHead({
     upsertMeta("property", "og:description", description);
     upsertMeta("property", "og:type", ogType);
     upsertMeta("property", "og:image", absoluteOgImage);
-    upsertMeta("property", "og:url", url);
+    upsertMeta("property", "og:url", canonicalUrl);
     upsertMeta("property", "og:site_name", "Hive Media");
-    upsertMeta("property", "og:locale", "en_US");
+    upsertMeta("property", "og:locale", OG_LOCALES[lang] || "en_US");
 
     // Twitter Card
     upsertMeta("name", "twitter:card", "summary_large_image");
@@ -65,15 +89,22 @@ export default function SeoHead({
     upsertMeta("name", "twitter:image", absoluteOgImage);
 
     // Canonical
-    upsertLink("canonical", url);
+    upsertLink("canonical", canonicalUrl);
 
-    // Schema (JSON-LD) — inject per-page schema if provided
+    // Hreflang alternates
+    removeHreflangLinks();
+    SUPPORTED_LANGS.forEach((lng) => {
+      const altUrl = `${SITE_URL}/${lng}${pathWithoutLang === "/" ? "" : pathWithoutLang}`;
+      upsertHreflang(lng, altUrl);
+    });
+    // x-default points to /en
+    upsertHreflang("x-default", `${SITE_URL}/en${pathWithoutLang === "/" ? "" : pathWithoutLang}`);
+
+    // Schema (JSON-LD)
     const existingPageSchema = document.head.querySelector(
       'script[data-seo-head="true"]'
     );
-    if (existingPageSchema) {
-      existingPageSchema.remove();
-    }
+    if (existingPageSchema) existingPageSchema.remove();
     if (schema) {
       const script = document.createElement("script");
       script.type = "application/ld+json";
@@ -82,14 +113,11 @@ export default function SeoHead({
       document.head.appendChild(script);
     }
 
-    // Cleanup page-level schema on unmount
     return () => {
-      const el = document.head.querySelector(
-        'script[data-seo-head="true"]'
-      );
+      const el = document.head.querySelector('script[data-seo-head="true"]');
       if (el) el.remove();
     };
-  }, [title, description, ogImage, ogType, schema, location.pathname]);
+  }, [title, description, ogImage, ogType, schema, location.pathname, lang]);
 
   return null;
 }

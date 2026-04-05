@@ -1,0 +1,225 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "strategy_call": "Solicitar llamada estratégica"
+  },
+  "hero": {
+    "badge": "Sistemas de crecimiento para empresas de servicios",
+    "title_part1": "Hacemos crecer tu empresa de servicios para que",
+    "title_highlight": "los clientes lleguen a ti.",
+    "subtitle": "Deja de perseguir clientes. Construimos el motor de marketing, el sitio web y los sistemas internos para que los leads calificados te encuentren y tu equipo los cierre más rápido.",
+    "cta_primary": "Agendar llamada estratégica gratuita",
+    "cta_secondary": "Ver todos los servicios",
+    "stat1_value": "+40%",
+    "stat1_label": "Aumento promedio de conversión",
+    "stat2_value": "Embudo completo",
+    "stat2_label": "Del clic al negocio cerrado",
+    "stat3_value": "Sin ataduras",
+    "stat3_label": "Contratos mes a mes",
+    "chart_label": "Rendimiento de leads",
+    "chart_trend": "+12% este mes"
+  },
+  "home": {
+    "services_heading": "Lo que hacemos por nuestros clientes",
+    "services_sub": "Servicios integrales diseñados para atraer leads calificados, convertirlos más rápido y mantener tus operaciones eficientes.",
+    "view_all_services": "Ver todos los servicios",
+    "how_we_work_heading_part1": "Cómo",
+    "how_we_work_heading_highlight": "trabajamos juntos",
+    "how_we_work_sub": "Un proceso directo diseñado para entregar resultados rápidamente, sin el habitual rodeo de las agencias.",
+    "process": [
+      { "step": "01", "title": "Llamada de descubrimiento", "desc": "Conocemos tu negocio, tu marketing actual y tus objetivos. Sin discurso de ventas—solo conversación honesta." },
+      { "step": "02", "title": "Auditoría y estrategia", "desc": "Auditamos tus anuncios, sitio web y seguimiento, y construimos un plan de 90 días con prioridades claras." },
+      { "step": "03", "title": "Implementación y lanzamiento", "desc": "Ejecutamos el plan—campañas, páginas, herramientas—manteniéndote informado en cada paso." },
+      { "step": "04", "title": "Optimización y crecimiento", "desc": "Seguimos los resultados semanalmente, refinamos lo que funciona, eliminamos lo que no, y escalamos lo que convierte." }
+    ],
+    "cta_heading_part1": "¿Listo para dejar de adivinar y",
+    "cta_heading_highlight": "empezar a crecer?",
+    "cta_sub": "Ya sea que necesites corregir el seguimiento, mejorar tus Google Ads, rediseñar tu sitio web o crear una herramienta interna, podemos ayudarte a priorizar lo que moverá la aguja primero.",
+    "cta_li1": "Auditoría honesta de tu marketing y seguimiento actuales",
+    "cta_li2": "Hoja de ruta clara para los próximos 90 días",
+    "cta_li3": "Sin contratos a largo plazo, solo trabajo que funciona",
+    "zero_risk": "Cero riesgo"
+  },
+  "why_hive": {
+    "heading_part1": "¿Por qué trabajar con",
+    "heading_highlight": "Hive Media?",
+    "sub": "No solo gestionamos anuncios—construimos el sistema completo que convierte clics en negocios cerrados, para que puedas enfocarte en operar tu negocio mientras los leads llegan constantemente.",
+    "items": [
+      { "title": "Entendemos las empresas de servicios", "description": "Trabajamos con empresas de HVAC, construcción y servicios del hogar. Conocemos tus ciclos de venta, estacionalidad y cómo es un lead calificado real." },
+      { "title": "Stack técnico completo interno", "description": "Estrategia, seguimiento, desarrollo web y herramientas internas bajo un mismo techo. Sin señalar con el dedo entre agencias y desarrolladores." },
+      { "title": "Obsesionados con la claridad y los reportes", "description": "Obtienes dashboards e informes que muestran a dónde va tu dinero, qué funciona y qué haremos a continuación—sin métricas de vanidad." }
+    ]
+  },
+  "common": {
+    "learn_more": "Saber más",
+    "get_quote": "Solicitar cotización",
+    "book_strategy": "Agendar llamada estratégica gratuita",
+    "get_strategy": "Obtener llamada estratégica gratuita",
+    "view_all_services": "Ver todos los servicios",
+    "read_article": "Leer artículo →",
+    "home": "Inicio",
+    "services": "Servicios",
+    "industries": "Industrias",
+    "min_read": "min de lectura",
+    "skipped": "Omitido",
+    "loading": "Cargando…"
+  },
+  "footer": {
+    "tagline": "Agencia de crecimiento digital que ayuda a empresas de servicios a generar y cerrar más leads a través de marketing de rendimiento y tecnología moderna.",
+    "services_heading": "Servicios",
+    "company_heading": "Empresa",
+    "industries_heading": "Industrias",
+    "contact_heading": "Contáctanos",
+    "contact_form": "Formulario de contacto",
+    "chat": "Chatea con nosotros",
+    "copyright": "Todos los derechos reservados.",
+    "client_portal": "Portal de Clientes",
+    "all_services": "Todos los servicios",
+    "construction": "Construcción",
+    "hvac": "HVAC",
+    "manufacturing": "Manufactura",
+    "about": "Nosotros",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "about": {
+    "badge": "Nosotros",
+    "h1": "Sobre Hive Media",
+    "intro": "Combinamos marketing de rendimiento, desarrollo web moderno y herramientas internas para construir sistemas de crecimiento predecibles para empresas de servicios.",
+    "why_badge": "Por qué existimos",
+    "why_p1": "Fundamos Hive Media tras ver el mismo problema una y otra vez: 9 de cada 10 empresas de servicios—HVAC, techos, construcción—desperdiciaban dinero en anuncios que generaban clics pero no clientes reales. Las agencias reportaban impresiones y CTR, pero nadie preguntaba \"¿cuántos de esos clics se convirtieron en trabajos reservados?\"",
+    "why_p2": "Construimos Hive para responder esa pregunta y arreglar todo el proceso, desde el clic en el anuncio hasta el negocio cerrado.",
+    "philosophy_part1": "Nuestra filosofía es simple:",
+    "philosophy_highlight": "estrategia primero, luego ejecución, luego iteración.",
+    "philosophy_rest": "No creemos en métricas de vanidad, contratos de exclusividad a largo plazo, ni en hacer trabajo que no mueva directamente tu negocio hacia adelante.",
+    "values": [
+      { "title": "Técnica y marketing en un solo lugar", "desc": "Cerramos la brecha entre la estrategia de marketing y el código que hay que escribir para hacerla realidad." },
+      { "title": "Comunicación transparente", "desc": "Compartimos lo que hacemos, por qué lo hacemos y cómo va el rendimiento—bueno o malo." },
+      { "title": "Alianzas a largo plazo", "desc": "Nuestro mejor trabajo ocurre con clientes que nos ven como socios y colaboradores, no solo como otro proveedor." }
+    ],
+    "how_we_work_heading": "Cómo nos gusta trabajar",
+    "steps": [
+      "Comenzamos con una llamada de descubrimiento y una auditoría simple.",
+      "Diseñamos un plan de 60–90 días enfocado en victorias rápidas y correcciones críticas.",
+      "Implementamos, medimos e iteramos con comunicación clara en cada paso del camino."
+    ],
+    "cta_heading": "¿Quieres ver si somos la combinación perfecta?",
+    "cta_sub": "Hablemos. Sin compromiso, sin presión—solo una mirada honesta a dónde está tu negocio y qué podría mover la aguja.",
+    "cta_btn": "Agendar llamada estratégica gratuita"
+  },
+  "contact": {
+    "h1_part1": "Hablemos sobre",
+    "h1_highlight": "el crecimiento de tu negocio.",
+    "sub": "Completa el formulario y te responderemos en 1–2 días hábiles con los próximos pasos o una propuesta para una llamada estratégica.",
+    "what_next_heading": "¿Qué pasa después?",
+    "steps": [
+      { "title": "Revisamos tu información", "desc": "Leemos tu mensaje y verificamos si somos una buena combinación." },
+      { "title": "Obtenemos contexto", "desc": "Podemos solicitar acceso de solo lectura a tu sitio web o cuenta de anuncios." },
+      { "title": "Llamada estratégica", "desc": "Programamos una llamada para revisar prioridades y próximos pasos." }
+    ],
+    "trust": [
+      "Sin compromiso — sin spam, sin condiciones",
+      "Nos comunicamos en inglés y español",
+      "Respuesta en 1–2 días hábiles"
+    ],
+    "chat_cta": "¿Prefieres chatear? Habla con nosotros ahora"
+  },
+  "contact_form": {
+    "step_name_q": "¿Cuál es tu nombre?",
+    "step_name_ph": "Tu nombre",
+    "step_email_q": "¿Y tu correo electrónico?",
+    "step_email_ph": "tu@empresa.com",
+    "step_services_q": "¿Qué estás buscando?",
+    "step_services_hint": "Selecciona todos los que apliquen",
+    "step_message_q": "¿Algo más que quieras que sepamos?",
+    "step_message_ph": "Cuéntanos brevemente sobre tu negocio, objetivos o preguntas.",
+    "continue": "Continuar",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "skip": "Omitir y enviar",
+    "success_title": "¡Mensaje enviado!",
+    "success_sub": "Recibimos tu mensaje y haremos seguimiento en 1–2 días hábiles.",
+    "error_generic": "Algo salió mal. Por favor intenta de nuevo.",
+    "error_submit": "No pudimos enviar tu mensaje. Por favor intenta de nuevo.",
+    "compact_name_ph": "Tu nombre",
+    "compact_email_ph": "tu@empresa.com",
+    "compact_cta": "Obtener mi hoja de ruta gratuita",
+    "services": ["Google Ads", "Rediseño de sitio web", "SEO", "Herramientas internas", "Estrategia completa", "Aún no lo sé"]
+  },
+  "services_page": {
+    "badge": "Nuestros servicios",
+    "h1_part1": "Servicios diseñados para",
+    "h1_highlight": "crecimiento medible.",
+    "sub": "Cada servicio que ofrecemos existe para mover uno de tres palancas: más tráfico calificado, mejores tasas de conversión y sistemas internos más sólidos para manejar la demanda.",
+    "cta_heading": "¿No estás seguro qué servicio necesitas?",
+    "cta_sub": "Agenda una llamada estratégica gratuita y te ayudaremos a identificar qué moverá la aguja para tu negocio ahora mismo.",
+    "cta_btn": "Agendar llamada estratégica gratuita"
+  },
+  "service_card": {
+    "learn_more": "Saber más",
+    "get_quote": "Solicitar cotización"
+  },
+  "service_page": {
+    "whats_included": "Qué incluye",
+    "our_process": "Nuestro proceso",
+    "who_this_is_for": "Para quién es",
+    "related_services": "Servicios relacionados",
+    "cta_heading": "¿Listo para empezar con {{service}}?",
+    "cta_sub": "Agenda una llamada estratégica gratuita y te mostraremos exactamente cómo podemos ayudar a crecer tu negocio.",
+    "cta_btn": "Agendar llamada estratégica gratuita",
+    "get_strategy": "Obtener llamada estratégica gratuita",
+    "breadcrumb_home": "Inicio",
+    "breadcrumb_services": "Servicios"
+  },
+  "industries_page": {
+    "badge": "Industrias",
+    "h1_part1": "Industrias en las que",
+    "h1_highlight": "nos especializamos.",
+    "sub": "Trabajamos con empresas de servicios y fabricantes que necesitan más leads calificados, mejores sitios web y sistemas para gestionar el crecimiento.",
+    "cta_not_see": "¿No ves tu industria?",
+    "cta_sub": "Trabajamos con todo tipo de empresas de servicios. Agenda una llamada y discutiremos cómo podemos ayudar en tu situación específica.",
+    "cta_btn": "Agendar llamada estratégica gratuita",
+    "learn_more": "Saber más",
+    "breadcrumb_home": "Inicio",
+    "breadcrumb_industries": "Industrias"
+  },
+  "industry_page": {
+    "challenges": "Desafíos que enfrentan las empresas de {{industry}}",
+    "how_hive_helps": "Cómo ayuda Hive Media",
+    "learn_more_service": "Saber más sobre este servicio",
+    "services_for": "Servicios para empresas de {{industry}}",
+    "cta_heading": "¿Listo para hacer crecer tu negocio de {{industry}}?",
+    "cta_sub": "Agenda una llamada estratégica gratuita y te mostraremos cómo podemos ayudarte a generar más leads calificados.",
+    "cta_btn": "Agendar llamada estratégica gratuita",
+    "get_strategy": "Obtener llamada estratégica gratuita",
+    "breadcrumb_home": "Inicio",
+    "breadcrumb_industries": "Industrias"
+  },
+  "blog": {
+    "h1": "Blog e Ideas",
+    "sub": "Artículos cortos y prácticos para dueños de negocios y equipos que quieren entender qué mueve realmente la aguja en marketing digital y operaciones.",
+    "loading": "Cargando artículos…",
+    "error": "No pudimos cargar los artículos ahora. Por favor intenta más tarde.",
+    "no_posts": "Aún no hay artículos publicados. Vuelve pronto.",
+    "read_article": "Leer artículo →",
+    "min_read": "min de lectura"
+  },
+  "seo": {
+    "home_title": "Agencia de Marketing Digital y Desarrollo Web",
+    "home_desc": "Hive Media es una agencia de crecimiento digital que ayuda a empresas de servicios a adquirir y cerrar más leads a través de marketing de rendimiento, desarrollo web y herramientas internas.",
+    "services_title": "Servicios",
+    "services_desc": "Explora los servicios de Hive Media: marketing de rendimiento, sitios web, SEO, analítica y herramientas internas para empresas de servicios.",
+    "about_title": "Nosotros",
+    "about_desc": "Hive Media es una agencia de crecimiento digital enfocada en ayudar a empresas de servicios a generar y cerrar más leads con marketing de rendimiento, sitios web modernos y herramientas internas.",
+    "contact_title": "Contacto",
+    "contact_desc": "Contacta a Hive Media para hablar sobre marketing de rendimiento, desarrollo web o herramientas internas para tu empresa de servicios.",
+    "industries_title": "Industrias que atendemos",
+    "industries_desc": "Hive Media ofrece servicios de marketing digital para empresas de construcción, HVAC y manufactura. Estrategias específicas por industria que generan leads calificados.",
+    "blog_title": "Blog e Ideas",
+    "blog_desc": "Artículos de Hive Media sobre marketing de rendimiento, desarrollo web y operaciones para empresas de servicios."
+  }
+}

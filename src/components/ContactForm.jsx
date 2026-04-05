@@ -1,28 +1,24 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 const API_URL = import.meta.env.VITE_API_URL;
 
-const SERVICE_OPTIONS = [
-  "Google Ads",
-  "Website redesign",
-  "SEO",
-  "Internal tools",
-  "Full strategy",
-  "Not sure yet"
-];
-
-const STEPS = [
-  { key: "name", question: "What's your name?", placeholder: "Your name", type: "text", autoComplete: "name" },
-  { key: "email", question: "And your email?", placeholder: "you@company.com", type: "email", autoComplete: "email" },
-  { key: "services", question: "What are you looking for?", hint: "Select all that apply" },
-  { key: "message", question: "Anything else you'd like us to know?", placeholder: "Tell us briefly about your business, goals, or questions.", type: "textarea" },
-];
-
 export default function ContactForm({ compact = false }) {
+  const { t } = useTranslation();
+
+  const SERVICE_OPTIONS = t("contact_form.services", { returnObjects: true });
+
+  const STEPS = [
+    { key: "name", question: t("contact_form.step_name_q"), placeholder: t("contact_form.step_name_ph"), type: "text", autoComplete: "name" },
+    { key: "email", question: t("contact_form.step_email_q"), placeholder: t("contact_form.step_email_ph"), type: "email", autoComplete: "email" },
+    { key: "services", question: t("contact_form.step_services_q"), hint: t("contact_form.step_services_hint") },
+    { key: "message", question: t("contact_form.step_message_q"), placeholder: t("contact_form.step_message_ph"), type: "textarea" },
+  ];
+
   const [step, setStep] = useState(0);
   const [form, setForm] = useState({ name: "", email: "", services: [], message: "" });
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [answered, setAnswered] = useState([]); // tracks which steps are "locked in"
+  const [answered, setAnswered] = useState([]);
   const inputRef = useRef(null);
 
   const currentStep = STEPS[step];
@@ -30,7 +26,6 @@ export default function ContactForm({ compact = false }) {
   const isServiceStep = currentStep?.key === "services";
   const isTextarea = currentStep?.type === "textarea";
 
-  // Auto-focus input on step change
   useEffect(() => {
     if (status !== "success") {
       const timer = setTimeout(() => inputRef.current?.focus(), 150);
@@ -39,7 +34,7 @@ export default function ContactForm({ compact = false }) {
   }, [step, status]);
 
   function canAdvance() {
-    if (currentStep.key === "message") return true; // optional
+    if (currentStep.key === "message") return true;
     if (currentStep.key === "services") return form.services.length > 0;
     const val = form[currentStep.key]?.trim();
     return val && val.length > 0;
@@ -85,7 +80,6 @@ export default function ContactForm({ compact = false }) {
   async function handleSubmit() {
     setStatus("loading");
     setErrorMessage("");
-
     try {
       const res = await fetch(`${API_URL}/api/public/leads`, {
         method: "POST",
@@ -99,12 +93,10 @@ export default function ContactForm({ compact = false }) {
           source: "organic"
         })
       });
-
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data?.message || "We could not submit your message. Please try again.");
+        throw new Error(data?.message || t("contact_form.error_submit"));
       }
-
       setStatus("success");
     } catch (err) {
       console.error(err);
@@ -113,12 +105,11 @@ export default function ContactForm({ compact = false }) {
     }
   }
 
-  // Compact mode: simplified for homepage
   if (compact) {
     return (
       <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm max-w-md">
         {status === "success" ? (
-          <SuccessMessage />
+          <SuccessMessage t={t} />
         ) : (
           <CompactForm
             form={form}
@@ -128,20 +119,19 @@ export default function ContactForm({ compact = false }) {
             setStatus={setStatus}
             setErrorMessage={setErrorMessage}
             errorMessage={errorMessage}
+            t={t}
           />
         )}
       </div>
     );
   }
 
-  // --- Full conversational form ---
   return (
     <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 shadow-sm max-w-lg">
       {status === "success" ? (
-        <SuccessMessage />
+        <SuccessMessage t={t} />
       ) : (
         <div className="space-y-4">
-          {/* Previous answers */}
           {answered.map((a, i) => (
             <div key={a.key} className="group">
               <p className="text-xs text-slate-400 mb-1">{a.question}</p>
@@ -150,7 +140,7 @@ export default function ContactForm({ compact = false }) {
                 onClick={() => handleEditStep(i)}
                 className="text-sm text-slate-200 hover:text-hive-yellow transition-colors flex items-center gap-2"
               >
-                {a.value || <span className="text-slate-400 italic">Skipped</span>}
+                {a.value || <span className="text-slate-400 italic">{t("common.skipped")}</span>}
                 <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487z" />
                 </svg>
@@ -158,17 +148,15 @@ export default function ContactForm({ compact = false }) {
             </div>
           ))}
 
-          {/* Current question */}
           <div className="pt-1">
             <p className="text-base font-medium text-slate-50 mb-3">
               {currentStep.question}
             </p>
 
             {isServiceStep ? (
-              /* Service selector — multi-select */
               <div className="space-y-3">
                 <p className="text-xs text-slate-400">{currentStep.hint}</p>
-                <div className="flex flex-wrap gap-2" role="group" aria-label="Select services">
+                <div className="flex flex-wrap gap-2" role="group" aria-label={t("contact_form.step_services_q")}>
                   {SERVICE_OPTIONS.map((service) => {
                     const selected = form.services.includes(service);
                     return (
@@ -197,10 +185,10 @@ export default function ContactForm({ compact = false }) {
                   onNext={handleNext}
                   isLast={isLastStep}
                   isLoading={status === "loading"}
+                  t={t}
                 />
               </div>
             ) : isTextarea ? (
-              /* Textarea step */
               <div className="space-y-3">
                 <label htmlFor="field-message" className="sr-only">{currentStep.question}</label>
                 <textarea
@@ -217,12 +205,12 @@ export default function ContactForm({ compact = false }) {
                   onNext={handleNext}
                   isLast={isLastStep}
                   isLoading={status === "loading"}
-                  skipLabel="Skip & send"
+                  skipLabel={t("contact_form.skip")}
                   showSkip={!form[currentStep.key]?.trim()}
+                  t={t}
                 />
               </div>
             ) : (
-              /* Text / email input */
               <div className="flex gap-2">
                 <label htmlFor={`field-${currentStep.key}`} className="sr-only">{currentStep.question}</label>
                 <input
@@ -240,7 +228,7 @@ export default function ContactForm({ compact = false }) {
                   type="button"
                   onClick={handleNext}
                   disabled={!canAdvance()}
-                  aria-label="Next step"
+                  aria-label={t("contact_form.continue")}
                   className="shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-hive-yellow text-slate-950 hover:brightness-110 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
@@ -252,12 +240,11 @@ export default function ContactForm({ compact = false }) {
 
             {status === "error" && (
               <p className="text-sm text-red-400 mt-2">
-                {errorMessage || "Something went wrong. Please try again."}
+                {errorMessage || t("contact_form.error_generic")}
               </p>
             )}
           </div>
 
-          {/* Progress dots */}
           <div className="flex items-center gap-1.5 pt-2">
             {STEPS.map((_, i) => (
               <div
@@ -274,11 +261,7 @@ export default function ContactForm({ compact = false }) {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Step action buttons                                                 */
-/* ------------------------------------------------------------------ */
-
-function StepActions({ canAdvance, onNext, isLast, isLoading, skipLabel, showSkip }) {
+function StepActions({ canAdvance, onNext, isLast, isLoading, skipLabel, showSkip, t }) {
   return (
     <div className="flex items-center gap-3">
       <button
@@ -287,7 +270,7 @@ function StepActions({ canAdvance, onNext, isLast, isLoading, skipLabel, showSki
         disabled={!canAdvance || isLoading}
         className="inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-5 py-2 text-sm font-semibold text-slate-950 hover:brightness-105 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
       >
-        {isLoading ? "Sending..." : isLast ? "Send message" : "Continue"}
+        {isLoading ? t("contact_form.sending") : isLast ? t("contact_form.send") : t("contact_form.continue")}
         {!isLoading && (
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -300,7 +283,7 @@ function StepActions({ canAdvance, onNext, isLast, isLoading, skipLabel, showSki
           onClick={onNext}
           className="inline-flex items-center gap-1 rounded-full border border-slate-600 px-4 py-2 text-sm font-medium text-slate-300 hover:border-hive-yellow/50 hover:text-hive-yellow transition-colors"
         >
-          {skipLabel || "Skip"}
+          {skipLabel || t("contact_form.skip")}
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
@@ -310,11 +293,7 @@ function StepActions({ canAdvance, onNext, isLast, isLoading, skipLabel, showSki
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Success state                                                       */
-/* ------------------------------------------------------------------ */
-
-function SuccessMessage() {
+function SuccessMessage({ t }) {
   return (
     <div className="text-center py-6 space-y-3">
       <div className="w-12 h-12 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mx-auto">
@@ -322,26 +301,21 @@ function SuccessMessage() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
         </svg>
       </div>
-      <h3 className="text-lg font-semibold text-slate-50">Message sent!</h3>
+      <h3 className="text-lg font-semibold text-slate-50">{t("contact_form.success_title")}</h3>
       <p className="text-sm text-slate-400 max-w-xs mx-auto">
-        We received your message and will follow up within 1–2 business days.
+        {t("contact_form.success_sub")}
       </p>
     </div>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Compact form (for homepage)                                         */
-/* ------------------------------------------------------------------ */
-
-function CompactForm({ form, setForm, status, onSubmit, setStatus, setErrorMessage, errorMessage }) {
+function CompactForm({ form, setForm, status, onSubmit, setStatus, setErrorMessage, errorMessage, t }) {
   const isSubmitting = status === "loading";
 
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("loading");
     setErrorMessage("");
-
     try {
       const res = await fetch(`${API_URL}/api/public/leads`, {
         method: "POST",
@@ -355,12 +329,10 @@ function CompactForm({ form, setForm, status, onSubmit, setStatus, setErrorMessa
           source: "organic"
         })
       });
-
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data?.message || "We could not submit your message. Please try again.");
+        throw new Error(data?.message || t("contact_form.error_submit"));
       }
-
       setStatus("success");
     } catch (err) {
       console.error(err);
@@ -371,7 +343,7 @@ function CompactForm({ form, setForm, status, onSubmit, setStatus, setErrorMessa
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-3">
-      <label htmlFor="compact-name" className="sr-only">Your name</label>
+      <label htmlFor="compact-name" className="sr-only">{t("contact_form.step_name_q")}</label>
       <input
         id="compact-name"
         name="name"
@@ -381,9 +353,9 @@ function CompactForm({ form, setForm, status, onSubmit, setStatus, setErrorMessa
         value={form.name}
         onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
         className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-hive-yellow"
-        placeholder="Your name"
+        placeholder={t("contact_form.compact_name_ph")}
       />
-      <label htmlFor="compact-email" className="sr-only">Email</label>
+      <label htmlFor="compact-email" className="sr-only">{t("contact_form.step_email_q")}</label>
       <input
         id="compact-email"
         name="email"
@@ -393,17 +365,17 @@ function CompactForm({ form, setForm, status, onSubmit, setStatus, setErrorMessa
         value={form.email}
         onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
         className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-hive-yellow"
-        placeholder="you@company.com"
+        placeholder={t("contact_form.compact_email_ph")}
       />
       <button
         type="submit"
         disabled={isSubmitting}
         className="rounded-full border border-hive-yellow bg-hive-yellow px-5 py-2 text-sm font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 disabled:opacity-60"
       >
-        {isSubmitting ? "Sending..." : "Get my free roadmap"}
+        {isSubmitting ? t("contact_form.sending") : t("contact_form.compact_cta")}
       </button>
       {status === "error" && (
-        <p className="text-xs text-red-400">{errorMessage || "Something went wrong."}</p>
+        <p className="text-xs text-red-400">{errorMessage || t("contact_form.error_generic")}</p>
       )}
     </form>
   );

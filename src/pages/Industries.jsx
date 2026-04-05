@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import SeoHead from "../seo/SeoHead.jsx";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
-import { INDUSTRIES } from "../data/industries.js";
 import { buildBreadcrumbs, SITE_URL } from "../seo/schemaHelpers.js";
+import { useLang } from "../hooks/useLang.js";
+import { useLocalizedIndustries } from "../hooks/useLocalizedData.js";
 
 const INDUSTRY_ICONS = {
   construction: (
@@ -24,15 +26,19 @@ const INDUSTRY_ICONS = {
 };
 
 export default function Industries() {
+  const { t } = useTranslation();
+  const { lp } = useLang();
+  const industries = useLocalizedIndustries();
+
   return (
     <>
       <SeoHead
-        title="Industries We Serve"
-        description="Hive Media provides digital marketing services for construction, HVAC, and manufacturing companies. Industry-specific strategies that drive qualified leads."
+        title={t("seo.industries_title")}
+        description={t("seo.industries_desc")}
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "Industries We Serve | Hive Media",
+          name: `${t("seo.industries_title")} | Hive Media`,
           url: `${SITE_URL}/industries`,
           breadcrumb: buildBreadcrumbs([
             { name: "Home", url: `${SITE_URL}/` },
@@ -43,30 +49,29 @@ export default function Industries() {
       <section className="pt-8 pb-14">
         <Breadcrumbs
           items={[
-            { label: "Home", to: "/" },
-            { label: "Industries" },
+            { label: t("industries_page.breadcrumb_home"), to: lp("/") },
+            { label: t("industries_page.breadcrumb_industries") },
           ]}
         />
         <div className="mb-10 max-w-3xl">
           <p className="inline-flex items-center gap-2 rounded-full border border-hive-yellow/30 bg-hive-yellow/5 px-4 py-1.5 text-sm font-medium text-hive-yellow mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-hive-yellow" />
-            Industries
+            {t("industries_page.badge")}
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">
-            Industries we{" "}
-            <span className="text-hive-yellow">specialize in.</span>
+            {t("industries_page.h1_part1")}{" "}
+            <span className="text-hive-yellow">{t("industries_page.h1_highlight")}</span>
           </h1>
           <p className="text-lg text-slate-300 leading-relaxed">
-            We work with service businesses and manufacturers that need more
-            qualified leads, better websites, and systems to manage growth.
+            {t("industries_page.sub")}
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3 max-w-5xl">
-          {INDUSTRIES.map((industry) => (
+          {industries.map((industry) => (
             <Link
               key={industry.slug}
-              to={`/industries/${industry.slug}`}
+              to={lp(`/industries/${industry.slug}`)}
               className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-hive-yellow/60 hover:shadow-lg hover:shadow-hive-yellow/5 transition-all flex flex-col"
             >
               <div className="w-11 h-11 rounded-xl border border-slate-700 bg-slate-950/60 flex items-center justify-center text-hive-yellow mb-4 group-hover:border-hive-yellow/40 group-hover:bg-hive-yellow/10 transition-colors">
@@ -79,7 +84,7 @@ export default function Industries() {
                 {industry.heroTagline}
               </p>
               <span className="inline-flex items-center gap-1 text-sm font-medium text-hive-yellow">
-                Learn more
+                {t("industries_page.learn_more")}
                 <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
@@ -91,17 +96,16 @@ export default function Industries() {
         {/* CTA */}
         <div className="mt-14 rounded-2xl border border-slate-700/80 bg-gradient-to-r from-slate-900 via-slate-900/95 to-hive-yellow/5 p-8 sm:p-10 text-center max-w-5xl">
           <h2 className="text-xl sm:text-2xl font-bold mb-3">
-            Don't see your industry?
+            {t("industries_page.cta_not_see")}
           </h2>
           <p className="text-base text-slate-300 max-w-xl mx-auto mb-6">
-            We work with all types of service businesses. Book a call and we'll
-            discuss how we can help your specific situation.
+            {t("industries_page.cta_sub")}
           </p>
           <Link
-            to="/contact"
+            to={lp("/contact")}
             className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition-all"
           >
-            Book a free strategy call
+            {t("industries_page.cta_btn")}
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>

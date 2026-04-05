@@ -1,20 +1,20 @@
 import { useParams, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import SeoHead from "../seo/SeoHead.jsx";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
-import { getIndustryBySlug } from "../data/industries.js";
-import { getServiceBySlug } from "../data/services.js";
 import { buildIndustrySchema } from "../seo/schemaHelpers.js";
 import NotFound from "./NotFound.jsx";
+import { useLang } from "../hooks/useLang.js";
+import { useLocalizedIndustry, useLocalizedRelevantServices } from "../hooks/useLocalizedData.js";
 
 export default function IndustryPage() {
   const { slug } = useParams();
-  const industry = getIndustryBySlug(slug);
+  const { t } = useTranslation();
+  const { lp } = useLang();
+  const industry = useLocalizedIndustry(slug);
+  const relevantServices = useLocalizedRelevantServices(slug);
 
   if (!industry) return <NotFound />;
-
-  const relevantServices = industry.relevantServices
-    .map((s) => getServiceBySlug(s))
-    .filter(Boolean);
 
   return (
     <>
@@ -28,8 +28,8 @@ export default function IndustryPage() {
         <div>
           <Breadcrumbs
             items={[
-              { label: "Home", to: "/" },
-              { label: "Industries", to: "/industries" },
+              { label: t("industry_page.breadcrumb_home"), to: lp("/") },
+              { label: t("industry_page.breadcrumb_industries"), to: lp("/industries") },
               { label: industry.shortTitle },
             ]}
           />
@@ -45,10 +45,10 @@ export default function IndustryPage() {
               {industry.heroDescription}
             </p>
             <Link
-              to="/contact"
+              to={lp("/contact")}
               className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition-all"
             >
-              Get a free strategy call
+              {t("industry_page.get_strategy")}
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -59,7 +59,7 @@ export default function IndustryPage() {
         {/* Pain points */}
         <div className="pt-8 border-t border-slate-800">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-50 mb-6">
-            Challenges {industry.shortTitle.toLowerCase()} companies face
+            {t("industry_page.challenges", { industry: industry.shortTitle.toLowerCase() })}
           </h2>
           <div className="grid gap-6 sm:grid-cols-3 max-w-5xl">
             {industry.painPoints.map((point) => (
@@ -82,7 +82,7 @@ export default function IndustryPage() {
         {/* Solutions */}
         <div className="pt-8 border-t border-slate-800">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-50 mb-6">
-            How Hive Media helps
+            {t("industry_page.how_hive_helps")}
           </h2>
           <div className="space-y-6 max-w-4xl">
             {industry.solutions.map((solution, i) => (
@@ -97,10 +97,10 @@ export default function IndustryPage() {
                   <h3 className="text-base font-semibold text-slate-50 mb-1">{solution.title}</h3>
                   <p className="text-sm text-slate-300 leading-relaxed mb-2">{solution.description}</p>
                   <Link
-                    to={`/services/${solution.serviceSlug}`}
+                    to={lp(`/services/${solution.serviceSlug}`)}
                     className="inline-flex items-center gap-1 text-sm font-medium text-hive-yellow hover:underline"
                   >
-                    Learn more about this service
+                    {t("industry_page.learn_more_service")}
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
@@ -114,13 +114,13 @@ export default function IndustryPage() {
         {/* Relevant services */}
         <div className="pt-8 border-t border-slate-800">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-50 mb-6">
-            Services for {industry.shortTitle.toLowerCase()} companies
+            {t("industry_page.services_for", { industry: industry.shortTitle.toLowerCase() })}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 max-w-4xl">
             {relevantServices.map((service) => (
               <Link
                 key={service.slug}
-                to={`/services/${service.slug}`}
+                to={lp(`/services/${service.slug}`)}
                 className="group flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 p-4 hover:border-hive-yellow/50 transition-all"
               >
                 <div className="w-10 h-10 rounded-lg bg-hive-yellow/10 border border-hive-yellow/30 flex items-center justify-center text-hive-yellow shrink-0 group-hover:bg-hive-yellow/20 transition-colors">
@@ -140,16 +140,16 @@ export default function IndustryPage() {
         {/* CTA */}
         <div className="rounded-2xl border border-slate-700/80 bg-gradient-to-r from-slate-900 via-slate-900/95 to-hive-yellow/5 p-8 sm:p-10 text-center max-w-4xl">
           <h2 className="text-xl sm:text-2xl font-bold mb-3">
-            Ready to grow your {industry.shortTitle.toLowerCase()} business?
+            {t("industry_page.cta_heading", { industry: industry.shortTitle.toLowerCase() })}
           </h2>
           <p className="text-base text-slate-300 max-w-xl mx-auto mb-6">
-            Book a free strategy call and we'll show you how we can help you generate more qualified leads.
+            {t("industry_page.cta_sub")}
           </p>
           <Link
-            to="/contact"
+            to={lp("/contact")}
             className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition-all"
           >
-            Book a free strategy call
+            {t("industry_page.cta_btn")}
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>

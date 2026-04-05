@@ -1,0 +1,225 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "about": "Über uns",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "strategy_call": "Strategiegespräch buchen"
+  },
+  "hero": {
+    "badge": "Wachstumssysteme für Dienstleistungsunternehmen",
+    "title_part1": "Wir skalieren Ihr Dienstleistungsunternehmen, damit",
+    "title_highlight": "Kunden zu Ihnen kommen.",
+    "subtitle": "Hören Sie auf, Kunden hinterherzulaufen. Wir bauen die Marketing-Maschinerie, die Website und die internen Systeme, damit qualifizierte Leads Sie finden und Ihr Team sie schneller abschließt.",
+    "cta_primary": "Kostenloses Strategiegespräch buchen",
+    "cta_secondary": "Alle Leistungen ansehen",
+    "stat1_value": "+40%",
+    "stat1_label": "Durchschn. Konversionssteigerung",
+    "stat2_value": "Full-Funnel",
+    "stat2_label": "Vom Klick zum Abschluss",
+    "stat3_value": "Keine Bindung",
+    "stat3_label": "Monatliche Verträge",
+    "chart_label": "Lead-Performance",
+    "chart_trend": "+12% diesen Monat"
+  },
+  "home": {
+    "services_heading": "Was wir für unsere Kunden tun",
+    "services_sub": "End-to-End-Leistungen, die qualifizierte Leads generieren, schneller konvertieren und Ihre Abläufe schlank halten.",
+    "view_all_services": "Alle Leistungen ansehen",
+    "how_we_work_heading_part1": "Wie wir",
+    "how_we_work_heading_highlight": "zusammenarbeiten",
+    "how_we_work_sub": "Ein klarer Prozess, der schnell Ergebnisse liefert – ohne die üblichen Umwege von Agenturen.",
+    "process": [
+      { "step": "01", "title": "Kennenlerngespräch", "desc": "Wir erfahren mehr über Ihr Unternehmen, Ihr aktuelles Marketing und Ihre Ziele. Kein Verkaufsgespräch – nur ein ehrliches Gespräch." },
+      { "step": "02", "title": "Audit & Strategie", "desc": "Wir analysieren Ihre Anzeigen, Website und Tracking und erstellen eine 90-Tage-Roadmap mit klaren Prioritäten." },
+      { "step": "03", "title": "Aufbau & Launch", "desc": "Wir setzen den Plan um – Kampagnen, Seiten, Tools – und halten Sie bei jedem Schritt auf dem Laufenden." },
+      { "step": "04", "title": "Optimierung & Wachstum", "desc": "Wir verfolgen Ergebnisse wöchentlich, verfeinern was funktioniert, streichen was nicht funktioniert, und skalieren was konvertiert." }
+    ],
+    "cta_heading_part1": "Bereit, aufzuhören zu raten und",
+    "cta_heading_highlight": "zu wachsen?",
+    "cta_sub": "Ob Sie das Tracking korrigieren, Google Ads optimieren, Ihre Website neu gestalten oder ein internes Tool entwickeln möchten – wir helfen Ihnen, das zu priorisieren, was zuerst den Unterschied macht.",
+    "cta_li1": "Ehrliches Audit Ihres aktuellen Marketings und Trackings",
+    "cta_li2": "Klare Roadmap für die nächsten 90 Tage",
+    "cta_li3": "Keine langfristigen Verträge, nur Arbeit die liefert",
+    "zero_risk": "Kein Risiko"
+  },
+  "why_hive": {
+    "heading_part1": "Warum mit",
+    "heading_highlight": "Hive Media arbeiten?",
+    "sub": "Wir schalten nicht nur Anzeigen – wir bauen das komplette System, das Klicks in abgeschlossene Deals verwandelt, damit Sie sich auf Ihr Geschäft konzentrieren können, während Leads kontinuierlich eingehen.",
+    "items": [
+      { "title": "Wir verstehen Dienstleistungsunternehmen", "description": "Wir arbeiten mit HLK-, Bau- und Haushaltsdienstleistern. Wir kennen Ihre Verkaufszyklen, Saisonalität und wie ein wirklich qualifizierter Lead aussieht." },
+      { "title": "Kompletter technischer Stack intern", "description": "Strategie, Tracking, Webentwicklung und interne Tools unter einem Dach. Kein gegenseitiges Beschuldigen zwischen Agenturen und Entwicklern." },
+      { "title": "Besessen von Klarheit und Reporting", "description": "Sie erhalten Dashboards und Berichte, die zeigen, wohin Ihr Geld fließt, was funktioniert und was wir als nächstes tun – keine Eitelkeitsmetriken." }
+    ]
+  },
+  "common": {
+    "learn_more": "Mehr erfahren",
+    "get_quote": "Angebot anfordern",
+    "book_strategy": "Kostenloses Strategiegespräch buchen",
+    "get_strategy": "Kostenloses Strategiegespräch erhalten",
+    "view_all_services": "Alle Leistungen ansehen",
+    "read_article": "Artikel lesen →",
+    "home": "Startseite",
+    "services": "Leistungen",
+    "industries": "Branchen",
+    "min_read": "Min. Lesezeit",
+    "skipped": "Übersprungen",
+    "loading": "Wird geladen…"
+  },
+  "footer": {
+    "tagline": "Digitale Wachstumsagentur, die Dienstleistungsunternehmen hilft, mehr Leads zu generieren und abzuschließen – durch Performance-Marketing und moderne Technologie.",
+    "services_heading": "Leistungen",
+    "company_heading": "Unternehmen",
+    "industries_heading": "Branchen",
+    "contact_heading": "Kontakt aufnehmen",
+    "contact_form": "Kontaktformular",
+    "chat": "Chat starten",
+    "copyright": "Alle Rechte vorbehalten.",
+    "client_portal": "Kundenportal",
+    "all_services": "Alle Leistungen",
+    "construction": "Bauwesen",
+    "hvac": "HLK",
+    "manufacturing": "Fertigung",
+    "about": "Über uns",
+    "blog": "Blog",
+    "contact": "Kontakt"
+  },
+  "about": {
+    "badge": "Über uns",
+    "h1": "Über Hive Media",
+    "intro": "Wir kombinieren Performance-Marketing, moderne Webentwicklung und interne Tools, um vorhersehbare Wachstumssysteme für Dienstleistungsunternehmen zu entwickeln.",
+    "why_badge": "Warum wir existieren",
+    "why_p1": "Wir haben Hive Media gegründet, nachdem wir immer wieder dasselbe Problem gesehen haben: 9 von 10 Dienstleistungsunternehmen – HLK, Dachdecker, Bau – verbrannten Geld für Anzeigen, die Klicks, aber keine echten Kunden generierten. Agenturen berichteten über Impressionen und CTR, aber niemand fragte: „Wie viele dieser Klicks wurden zu gebuchten Aufträgen?"",
+    "why_p2": "Wir haben Hive gegründet, um diese Frage zu beantworten und die gesamte Pipeline zu reparieren – vom Anzeigenklick bis zum abgeschlossenen Deal.",
+    "philosophy_part1": "Unsere Philosophie ist einfach:",
+    "philosophy_highlight": "erst Strategie, dann Umsetzung, dann Iteration.",
+    "philosophy_rest": "Wir glauben nicht an Eitelkeitsmetriken, langfristige Exklusivverträge oder Arbeit, die Ihr Geschäft nicht direkt voranbringt.",
+    "values": [
+      { "title": "Technik und Marketing an einem Ort", "desc": "Wir überbrücken die Lücke zwischen der Marketingstrategie und dem Code, der geschrieben werden muss, um sie Wirklichkeit werden zu lassen." },
+      { "title": "Transparente Kommunikation", "desc": "Wir teilen, was wir tun, warum wir es tun und wie es läuft – ob gut oder schlecht." },
+      { "title": "Langfristige Partnerschaften", "desc": "Unsere beste Arbeit entsteht mit Kunden, die uns als Partner und Mitarbeiter sehen, nicht nur als einen weiteren Dienstleister." }
+    ],
+    "how_we_work_heading": "Wie wir gerne arbeiten",
+    "steps": [
+      "Wir beginnen mit einem Kennenlerngespräch und einem einfachen Audit.",
+      "Wir entwerfen einen 60–90-Tage-Plan mit Fokus auf schnelle Erfolge und kritische Korrekturen.",
+      "Wir implementieren, messen und iterieren mit klarer Kommunikation bei jedem Schritt."
+    ],
+    "cta_heading": "Möchten Sie sehen, ob wir zueinander passen?",
+    "cta_sub": "Lassen Sie uns reden. Kein Engagement, kein Druck – nur ein ehrlicher Blick auf den Stand Ihres Unternehmens und was den Unterschied machen könnte.",
+    "cta_btn": "Kostenloses Strategiegespräch buchen"
+  },
+  "contact": {
+    "h1_part1": "Lassen Sie uns über",
+    "h1_highlight": "Ihr Unternehmenswachstum sprechen.",
+    "sub": "Füllen Sie das Formular aus und wir melden uns innerhalb von 1–2 Werktagen mit den nächsten Schritten oder einem Vorschlag für ein Strategiegespräch.",
+    "what_next_heading": "Was passiert als nächstes",
+    "steps": [
+      { "title": "Wir prüfen Ihre Angaben", "desc": "Wir lesen Ihre Nachricht und prüfen, ob wir gut zueinander passen." },
+      { "title": "Wir holen Kontext ein", "desc": "Wir können Lesezugriff auf Ihre Website oder Ihr Anzeigenkonto anfordern." },
+      { "title": "Strategiegespräch", "desc": "Wir vereinbaren einen Anruf, um Prioritäten und nächste Schritte zu besprechen." }
+    ],
+    "trust": [
+      "Keine Verpflichtung — kein Spam, keine Bedingungen",
+      "Wir kommunizieren auf Englisch und Spanisch",
+      "Antwort innerhalb von 1–2 Werktagen"
+    ],
+    "chat_cta": "Lieber chatten? Schreiben Sie uns jetzt"
+  },
+  "contact_form": {
+    "step_name_q": "Wie heißen Sie?",
+    "step_name_ph": "Ihr Name",
+    "step_email_q": "Und Ihre E-Mail-Adresse?",
+    "step_email_ph": "sie@unternehmen.de",
+    "step_services_q": "Was suchen Sie?",
+    "step_services_hint": "Alle Zutreffenden auswählen",
+    "step_message_q": "Noch etwas, das wir wissen sollten?",
+    "step_message_ph": "Beschreiben Sie kurz Ihr Unternehmen, Ihre Ziele oder Ihre Fragen.",
+    "continue": "Weiter",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "skip": "Überspringen & senden",
+    "success_title": "Nachricht gesendet!",
+    "success_sub": "Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 1–2 Werktagen.",
+    "error_generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "error_submit": "Wir konnten Ihre Nachricht nicht senden. Bitte versuchen Sie es erneut.",
+    "compact_name_ph": "Ihr Name",
+    "compact_email_ph": "sie@unternehmen.de",
+    "compact_cta": "Meine kostenlose Roadmap erhalten",
+    "services": ["Google Ads", "Website-Neugestaltung", "SEO", "Interne Tools", "Vollständige Strategie", "Noch unsicher"]
+  },
+  "services_page": {
+    "badge": "Unsere Leistungen",
+    "h1_part1": "Leistungen für",
+    "h1_highlight": "messbares Wachstum.",
+    "sub": "Jede Leistung, die wir anbieten, zielt darauf ab, einen von drei Hebeln zu bewegen: mehr qualifizierten Traffic, bessere Konversionsraten und stärkere interne Systeme zur Bewältigung der Nachfrage.",
+    "cta_heading": "Unsicher, welche Leistung Sie brauchen?",
+    "cta_sub": "Buchen Sie ein kostenloses Strategiegespräch und wir helfen Ihnen herauszufinden, was Ihrem Unternehmen jetzt den größten Nutzen bringt.",
+    "cta_btn": "Kostenloses Strategiegespräch buchen"
+  },
+  "service_card": {
+    "learn_more": "Mehr erfahren",
+    "get_quote": "Angebot anfordern"
+  },
+  "service_page": {
+    "whats_included": "Was enthalten ist",
+    "our_process": "Unser Prozess",
+    "who_this_is_for": "Für wen ist das",
+    "related_services": "Verwandte Leistungen",
+    "cta_heading": "Bereit, mit {{service}} zu starten?",
+    "cta_sub": "Buchen Sie ein kostenloses Strategiegespräch und wir zeigen Ihnen genau, wie wir Ihrem Unternehmen beim Wachsen helfen können.",
+    "cta_btn": "Kostenloses Strategiegespräch buchen",
+    "get_strategy": "Kostenloses Strategiegespräch erhalten",
+    "breadcrumb_home": "Startseite",
+    "breadcrumb_services": "Leistungen"
+  },
+  "industries_page": {
+    "badge": "Branchen",
+    "h1_part1": "Branchen, auf die wir",
+    "h1_highlight": "spezialisiert sind.",
+    "sub": "Wir arbeiten mit Dienstleistungsunternehmen und Herstellern, die mehr qualifizierte Leads, bessere Websites und Systeme zur Wachstumsbewältigung benötigen.",
+    "cta_not_see": "Ihre Branche nicht gefunden?",
+    "cta_sub": "Wir arbeiten mit allen Arten von Dienstleistungsunternehmen. Buchen Sie einen Anruf und wir besprechen, wie wir Ihrer spezifischen Situation helfen können.",
+    "cta_btn": "Kostenloses Strategiegespräch buchen",
+    "learn_more": "Mehr erfahren",
+    "breadcrumb_home": "Startseite",
+    "breadcrumb_industries": "Branchen"
+  },
+  "industry_page": {
+    "challenges": "Herausforderungen für {{industry}}-Unternehmen",
+    "how_hive_helps": "Wie Hive Media hilft",
+    "learn_more_service": "Mehr über diese Leistung erfahren",
+    "services_for": "Leistungen für {{industry}}-Unternehmen",
+    "cta_heading": "Bereit, Ihr {{industry}}-Unternehmen zu wachsen?",
+    "cta_sub": "Buchen Sie ein kostenloses Strategiegespräch und wir zeigen Ihnen, wie wir Ihnen helfen können, mehr qualifizierte Leads zu generieren.",
+    "cta_btn": "Kostenloses Strategiegespräch buchen",
+    "get_strategy": "Kostenloses Strategiegespräch erhalten",
+    "breadcrumb_home": "Startseite",
+    "breadcrumb_industries": "Branchen"
+  },
+  "blog": {
+    "h1": "Blog & Einblicke",
+    "sub": "Kurze, praxisnahe Artikel für Inhaber und Teams, die verstehen wollen, was im digitalen Marketing und im Betrieb wirklich den Unterschied macht.",
+    "loading": "Artikel werden geladen…",
+    "error": "Wir konnten die Artikel gerade nicht laden. Bitte versuchen Sie es später erneut.",
+    "no_posts": "Noch keine Artikel veröffentlicht. Schauen Sie bald wieder vorbei.",
+    "read_article": "Artikel lesen →",
+    "min_read": "Min. Lesezeit"
+  },
+  "seo": {
+    "home_title": "Digitale Marketing- und Webentwicklungsagentur",
+    "home_desc": "Hive Media ist eine digitale Wachstumsagentur, die Dienstleistungsunternehmen dabei hilft, mehr Leads zu gewinnen und abzuschließen – durch Performance-Marketing, Webentwicklung und interne Tools.",
+    "services_title": "Leistungen",
+    "services_desc": "Entdecken Sie die Leistungen von Hive Media: Performance-Marketing, Websites, SEO, Analytics und interne Tools für Dienstleistungsunternehmen.",
+    "about_title": "Über uns",
+    "about_desc": "Hive Media ist eine digitale Wachstumsagentur, die sich darauf konzentriert, Dienstleistungsunternehmen dabei zu helfen, mehr Leads zu generieren und abzuschließen – mit Performance-Marketing, modernen Websites und internen Tools.",
+    "contact_title": "Kontakt",
+    "contact_desc": "Kontaktieren Sie Hive Media, um über Performance-Marketing, Webentwicklung oder interne Tools für Ihr Dienstleistungsunternehmen zu sprechen.",
+    "industries_title": "Branchen, die wir betreuen",
+    "industries_desc": "Hive Media bietet digitale Marketingleistungen für Bau-, HLK- und Fertigungsunternehmen. Branchenspezifische Strategien, die qualifizierte Leads generieren.",
+    "blog_title": "Blog & Einblicke",
+    "blog_desc": "Artikel von Hive Media zu Performance-Marketing, Webentwicklung und Betrieb für Dienstleistungsunternehmen."
+  }
+}

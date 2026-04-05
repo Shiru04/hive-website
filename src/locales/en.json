@@ -1,0 +1,225 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "strategy_call": "Get a strategy call"
+  },
+  "hero": {
+    "badge": "Growth systems for service businesses",
+    "title_part1": "We scale your service business so",
+    "title_highlight": "prospects come to you.",
+    "subtitle": "Stop chasing clients. We build the marketing engine, the website and the internal systems so qualified leads find you and your team closes them faster.",
+    "cta_primary": "Book a free strategy call",
+    "cta_secondary": "View all services",
+    "stat1_value": "+40%",
+    "stat1_label": "Avg. conversion lift",
+    "stat2_value": "Full-funnel",
+    "stat2_label": "Click to closed deal",
+    "stat3_value": "No lock-in",
+    "stat3_label": "Month-to-month contracts",
+    "chart_label": "Lead performance",
+    "chart_trend": "+12% this month"
+  },
+  "home": {
+    "services_heading": "What we do for our clients",
+    "services_sub": "End-to-end services designed to drive qualified leads, convert them faster, and keep your operations lean.",
+    "view_all_services": "View all services",
+    "how_we_work_heading_part1": "How we",
+    "how_we_work_heading_highlight": "work together",
+    "how_we_work_sub": "A straightforward process designed to deliver results quickly without the usual agency runaround.",
+    "process": [
+      { "step": "01", "title": "Discovery call", "desc": "We learn about your business, current marketing and goals. No sales pitch—just honest conversation." },
+      { "step": "02", "title": "Audit & strategy", "desc": "We audit your ads, website and tracking, then build a 90-day roadmap with clear priorities." },
+      { "step": "03", "title": "Build & launch", "desc": "We execute on the plan—campaigns, pages, tools—while keeping you in the loop at every step." },
+      { "step": "04", "title": "Optimize & grow", "desc": "We track results weekly, refine what works, cut what doesn't, and scale what converts." }
+    ],
+    "cta_heading_part1": "Ready to stop guessing and",
+    "cta_heading_highlight": "start growing?",
+    "cta_sub": "Whether you need to fix tracking, clean up your Google Ads, redesign your website or build an internal tool, we can help you prioritize what will move the needle first.",
+    "cta_li1": "Honest audit of your current marketing and tracking",
+    "cta_li2": "Clear roadmap for the next 90 days",
+    "cta_li3": "No long-term contracts, just work that performs",
+    "zero_risk": "Zero risk"
+  },
+  "why_hive": {
+    "heading_part1": "Why work with",
+    "heading_highlight": "Hive Media?",
+    "sub": "We don't just run ads—we build the entire system that turns clicks into closed deals, so you can focus on running your business while leads come in consistently.",
+    "items": [
+      { "title": "We understand service businesses", "description": "We work with HVAC, construction and home services providers. We know your sales cycles, seasonality and what a real qualified lead looks like." },
+      { "title": "Full technical stack in-house", "description": "Strategy, tracking, web development and internal tools under one roof. No finger-pointing between agencies and developers." },
+      { "title": "Obsessed with clarity and reporting", "description": "You get dashboards and reports that show where your money goes, what works, and what we are doing next—not vanity metrics." }
+    ]
+  },
+  "common": {
+    "learn_more": "Learn more",
+    "get_quote": "Get a quote",
+    "book_strategy": "Book a free strategy call",
+    "get_strategy": "Get a free strategy call",
+    "view_all_services": "View all services",
+    "read_article": "Read article →",
+    "home": "Home",
+    "services": "Services",
+    "industries": "Industries",
+    "min_read": "min read",
+    "skipped": "Skipped",
+    "loading": "Loading…"
+  },
+  "footer": {
+    "tagline": "Digital growth agency helping service businesses generate and close more leads through performance marketing and modern technology.",
+    "services_heading": "Services",
+    "company_heading": "Company",
+    "industries_heading": "Industries",
+    "contact_heading": "Get in touch",
+    "contact_form": "Contact form",
+    "chat": "Chat with us",
+    "copyright": "All rights reserved.",
+    "client_portal": "Client Portal",
+    "all_services": "All services",
+    "construction": "Construction",
+    "hvac": "HVAC",
+    "manufacturing": "Manufacturing",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "about": {
+    "badge": "About us",
+    "h1": "About Hive Media",
+    "intro": "We combine performance marketing, modern web development and internal tools to build predictable growth systems for service businesses.",
+    "why_badge": "Why we exist",
+    "why_p1": "We started Hive Media after seeing the same problem over and over: 9 out of 10 service businesses—HVAC, roofing, construction—were burning money on ads that generated clicks but not real customers. Agencies would report on impressions and CTR, but nobody was asking \"how many of those clicks turned into booked jobs?\"",
+    "why_p2": "We built Hive to answer that question and fix the entire pipeline from the ad click to the closed deal.",
+    "philosophy_part1": "Our philosophy is simple:",
+    "philosophy_highlight": "strategy first, then execution, then iteration.",
+    "philosophy_rest": "We don't believe in vanity metrics, long-term lock-in contracts, or doing work that doesn't directly move your business forward.",
+    "values": [
+      { "title": "Technical and marketing in one place", "desc": "We bridge the gap between the marketing strategy and the code that needs to be written to make it real." },
+      { "title": "Transparent communication", "desc": "We share what we are doing, why we are doing it, and how it is performing—good or bad." },
+      { "title": "Long-term partnerships", "desc": "Our best work happens with clients that see us as partners and collaborators, not just another vendor." }
+    ],
+    "how_we_work_heading": "How we like to work",
+    "steps": [
+      "We start with a discovery call and a simple audit.",
+      "We design a 60–90 day plan focused on quick wins and critical fixes.",
+      "We implement, measure, and iterate with clear communication every step of the way."
+    ],
+    "cta_heading": "Want to see if we're a good fit?",
+    "cta_sub": "Let's have a conversation. No commitment, no pressure—just an honest look at where your business stands and what could move the needle.",
+    "cta_btn": "Book a free strategy call"
+  },
+  "contact": {
+    "h1_part1": "Let's talk about",
+    "h1_highlight": "growing your business.",
+    "sub": "Fill out the form and we'll get back to you within 1–2 business days with next steps or a proposal for a strategy call.",
+    "what_next_heading": "What happens next",
+    "steps": [
+      { "title": "We review your info", "desc": "We read your message and check if we're a good fit." },
+      { "title": "We get context", "desc": "We may request view-only access to your website or ad account." },
+      { "title": "Strategy call", "desc": "We schedule a call to walk through priorities and next steps." }
+    ],
+    "trust": [
+      "No obligation — no spam, no strings attached",
+      "We communicate in English and Spanish",
+      "Response within 1–2 business days"
+    ],
+    "chat_cta": "Prefer to chat? Talk to us now"
+  },
+  "contact_form": {
+    "step_name_q": "What's your name?",
+    "step_name_ph": "Your name",
+    "step_email_q": "And your email?",
+    "step_email_ph": "you@company.com",
+    "step_services_q": "What are you looking for?",
+    "step_services_hint": "Select all that apply",
+    "step_message_q": "Anything else you'd like us to know?",
+    "step_message_ph": "Tell us briefly about your business, goals, or questions.",
+    "continue": "Continue",
+    "send": "Send message",
+    "sending": "Sending...",
+    "skip": "Skip & send",
+    "success_title": "Message sent!",
+    "success_sub": "We received your message and will follow up within 1–2 business days.",
+    "error_generic": "Something went wrong. Please try again.",
+    "error_submit": "We could not submit your message. Please try again.",
+    "compact_name_ph": "Your name",
+    "compact_email_ph": "you@company.com",
+    "compact_cta": "Get my free roadmap",
+    "services": ["Google Ads", "Website redesign", "SEO", "Internal tools", "Full strategy", "Not sure yet"]
+  },
+  "services_page": {
+    "badge": "Our services",
+    "h1_part1": "Services built around",
+    "h1_highlight": "measurable growth.",
+    "sub": "Every service we offer exists to move one of three levers: more qualified traffic, better conversion rates, and stronger internal systems to handle the demand.",
+    "cta_heading": "Not sure which service you need?",
+    "cta_sub": "Book a free strategy call and we'll help you figure out what will move the needle for your business right now.",
+    "cta_btn": "Book a free strategy call"
+  },
+  "service_card": {
+    "learn_more": "Learn more",
+    "get_quote": "Get a quote"
+  },
+  "service_page": {
+    "whats_included": "What's included",
+    "our_process": "Our process",
+    "who_this_is_for": "Who this is for",
+    "related_services": "Related services",
+    "cta_heading": "Ready to get started with {{service}}?",
+    "cta_sub": "Book a free strategy call and we'll show you exactly how we can help your business grow.",
+    "cta_btn": "Book a free strategy call",
+    "get_strategy": "Get a free strategy call",
+    "breadcrumb_home": "Home",
+    "breadcrumb_services": "Services"
+  },
+  "industries_page": {
+    "badge": "Industries",
+    "h1_part1": "Industries we",
+    "h1_highlight": "specialize in.",
+    "sub": "We work with service businesses and manufacturers that need more qualified leads, better websites, and systems to manage growth.",
+    "cta_not_see": "Don't see your industry?",
+    "cta_sub": "We work with all types of service businesses. Book a call and we'll discuss how we can help your specific situation.",
+    "cta_btn": "Book a free strategy call",
+    "learn_more": "Learn more",
+    "breadcrumb_home": "Home",
+    "breadcrumb_industries": "Industries"
+  },
+  "industry_page": {
+    "challenges": "Challenges {{industry}} companies face",
+    "how_hive_helps": "How Hive Media helps",
+    "learn_more_service": "Learn more about this service",
+    "services_for": "Services for {{industry}} companies",
+    "cta_heading": "Ready to grow your {{industry}} business?",
+    "cta_sub": "Book a free strategy call and we'll show you how we can help you generate more qualified leads.",
+    "cta_btn": "Book a free strategy call",
+    "get_strategy": "Get a free strategy call",
+    "breadcrumb_home": "Home",
+    "breadcrumb_industries": "Industries"
+  },
+  "blog": {
+    "h1": "Blog & Insights",
+    "sub": "Short, practical articles for owners and teams who want to understand what actually moves the needle in digital marketing and operations.",
+    "loading": "Loading articles…",
+    "error": "We could not load the articles right now. Please try again later.",
+    "no_posts": "No articles published yet. Please check back soon.",
+    "read_article": "Read article →",
+    "min_read": "min read"
+  },
+  "seo": {
+    "home_title": "Digital Marketing & Web Development Agency",
+    "home_desc": "Hive Media is a digital growth agency helping service businesses acquire and close more leads through performance marketing, web development and internal tools.",
+    "services_title": "Services",
+    "services_desc": "Explore Hive Media's services: performance marketing, websites, SEO, analytics and internal tools for service-based businesses.",
+    "about_title": "About Us",
+    "about_desc": "Hive Media is a digital growth agency focused on helping service-based businesses generate and close more leads with performance marketing, modern websites and internal tools.",
+    "contact_title": "Contact",
+    "contact_desc": "Contact Hive Media to discuss performance marketing, web development or internal tools for your service business.",
+    "industries_title": "Industries We Serve",
+    "industries_desc": "Hive Media provides digital marketing services for construction, HVAC, and manufacturing companies. Industry-specific strategies that drive qualified leads.",
+    "blog_title": "Blog & Insights",
+    "blog_desc": "Hive Media's articles on performance marketing, web development and operations for service-based businesses."
+  }
+}
