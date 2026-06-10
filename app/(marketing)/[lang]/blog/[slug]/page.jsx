@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
       robots: { index: false, follow: false },
     };
   }
-  return buildMetadata({
+  const metadata = buildMetadata({
     lang,
     path: `/blog/${slug}`,
     title: post.seoTitle || post.title,
@@ -47,6 +47,12 @@ export async function generateMetadata({ params }) {
     ogType: "article",
     ogImage: post.ogImage || post.coverImage || undefined,
   });
+  // Content-freshness signals (article:published_time / article:modified_time)
+  if (post.publishedAt) metadata.openGraph.publishedTime = post.publishedAt;
+  if (post.updatedAt || post.publishedAt) {
+    metadata.openGraph.modifiedTime = post.updatedAt || post.publishedAt;
+  }
+  return metadata;
 }
 
 export default async function Page({ params }) {

@@ -58,10 +58,12 @@ export default async function sitemap() {
     ...(await fetchBlogPaths()),
   ];
 
+  const buildTime = process.env.NEXT_PUBLIC_BUILD_TIME;
+
   return pages.flatMap(({ path, lastModified, changeFrequency, priority }) =>
     SUPPORTED_LANGS.map((lang) => ({
       url: `${SITE_URL}/${lang}${path}`,
-      lastModified,
+      lastModified: lastModified || buildTime,
       changeFrequency,
       priority: lang === "en" ? priority : Math.max(priority - 0.1, 0.1),
       alternates: { languages: languageAlternates(path) },
