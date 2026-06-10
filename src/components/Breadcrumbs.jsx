@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Breadcrumbs({ items }) {
   return (
@@ -16,7 +16,7 @@ export default function Breadcrumbs({ items }) {
               {isLast ? (
                 <span className="text-slate-300">{item.label}</span>
               ) : (
-                <Link to={item.to} className="hover:text-hive-yellow transition-colors">
+                <Link href={item.to} className="hover:text-hive-yellow transition-colors">
                   {item.label}
                 </Link>
               )}

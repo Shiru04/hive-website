@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useState, useEffect, useCallback } from "react";
 import portalClient from "../api/portalClient.js";
 
@@ -5,10 +7,13 @@ export const PortalAuthContext = createContext(null);
 
 export function PortalAuthProvider({ children }) {
   const [user, setUser] = useState(() => {
+    if (typeof window === "undefined") return null;
     try { return JSON.parse(localStorage.getItem("portal_user")); }
     catch { return null; }
   });
-  const [token, setToken] = useState(() => localStorage.getItem("portal_token"));
+  const [token, setToken] = useState(() =>
+    typeof window === "undefined" ? null : localStorage.getItem("portal_token")
+  );
   const [loading, setLoading] = useState(true);
   const [branding, setBranding] = useState(null);
 

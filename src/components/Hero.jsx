@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import remoteCallImg from "../assets/remote-call.webp";
 import { useLang } from "../hooks/useLang.js";
@@ -31,7 +33,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
             <Link
-              to={lp("/contact")}
+              href={lp("/contact")}
               className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition-all"
             >
               {t("hero.cta_primary")}
@@ -40,7 +42,7 @@ export default function Hero() {
               </svg>
             </Link>
             <Link
-              to={lp("/services")}
+              href={lp("/services")}
               className="inline-flex items-center rounded-full border border-slate-600 bg-slate-900/80 px-6 py-3 text-base font-semibold text-slate-200 hover:border-hive-yellow/60 hover:text-hive-yellow transition-colors"
             >
               {t("hero.cta_secondary")}
@@ -68,7 +70,7 @@ export default function Hero() {
           <div className="absolute -inset-4 bg-gradient-to-tr from-hive-yellow/10 via-transparent to-sky-500/10 blur-3xl pointer-events-none" />
           <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl">
             <img
-              src={remoteCallImg}
+              src={remoteCallImg.src}
               alt="Strategy call with a client"
               className="w-full h-[420px] object-cover object-center"
               loading="eager"

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useCallback } from "react";
 import portalClient from "../api/portalClient.js";
 

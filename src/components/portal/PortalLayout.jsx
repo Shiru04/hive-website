@@ -1,13 +1,17 @@
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { usePortalAuth } from "../../hooks/usePortalAuth.js";
 
-export default function PortalLayout() {
+export default function PortalLayout({ children }) {
   const { user, logout } = usePortalAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const pathname = usePathname();
 
   function handleLogout() {
     logout();
-    navigate("/portal/login");
+    router.push("/portal/login");
   }
 
   const navItems = [
@@ -19,6 +23,11 @@ export default function PortalLayout() {
     { to: "/portal/contracts", label: "Contracts" },
     { to: "/portal/account", label: "Account" },
   ];
+
+  function isActive(item) {
+    if (item.end) return pathname === item.to;
+    return pathname === item.to || pathname?.startsWith(`${item.to}/`);
+  }
 
   return (
     <>
@@ -33,20 +42,17 @@ export default function PortalLayout() {
               </span>
               <nav className="hidden sm:flex items-center gap-1">
                 {navItems.map(item => (
-                  <NavLink
+                  <Link
                     key={item.to}
-                    to={item.to}
-                    end={item.end}
-                    className={({ isActive }) =>
-                      `px-3 py-1.5 rounded-lg text-sm transition-colors ${
-                        isActive
-                          ? "bg-hive-yellow/10 text-hive-yellow font-semibold"
-                          : "text-slate-400 hover:text-slate-200 hover:bg-slate-800"
-                      }`
-                    }
+                    href={item.to}
+                    className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
+                      isActive(item)
+                        ? "bg-hive-yellow/10 text-hive-yellow font-semibold"
+                        : "text-slate-400 hover:text-slate-200 hover:bg-slate-800"
+                    }`}
                   >
                     {item.label}
-                  </NavLink>
+                  </Link>
                 ))}
               </nav>
             </div>
@@ -65,27 +71,24 @@ export default function PortalLayout() {
           {/* Mobile nav */}
           <nav className="sm:hidden flex items-center gap-1 px-4 pb-2 overflow-x-auto">
             {navItems.map(item => (
-              <NavLink
+              <Link
                 key={item.to}
-                to={item.to}
-                end={item.end}
-                className={({ isActive }) =>
-                  `px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors ${
-                    isActive
-                      ? "bg-hive-yellow/10 text-hive-yellow font-semibold"
-                      : "text-slate-400 hover:text-slate-200"
-                  }`
-                }
+                href={item.to}
+                className={`px-3 py-1 rounded-full text-xs whitespace-nowrap transition-colors ${
+                  isActive(item)
+                    ? "bg-hive-yellow/10 text-hive-yellow font-semibold"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
               >
                 {item.label}
-              </NavLink>
+              </Link>
             ))}
           </nav>
         </header>
 
         {/* Content */}
         <main className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
-          <Outlet />
+          {children}
         </main>
       </div>
     </>

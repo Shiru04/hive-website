@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import LogoHive from "../assets/logo-hive.webp";
 import { useLang } from "../hooks/useLang.js";
@@ -14,9 +16,9 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-[2fr,1fr,1fr] lg:grid-cols-[2fr,1fr,1fr,1fr]">
           {/* Brand */}
           <div>
-            <Link to={lp("/")} className="inline-block mb-3">
+            <Link href={lp("/")} className="inline-block mb-3">
               <img
-                src={LogoHive}
+                src={LogoHive.src}
                 alt="Hive Media logo"
                 className="h-10 w-auto object-contain"
                 width="132"
@@ -32,11 +34,11 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-slate-200 mb-3">{t("footer.services_heading")}</p>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><Link to={lp("/services/google-ads")} className="hover:text-hive-yellow transition-colors">Google Ads</Link></li>
-              <li><Link to={lp("/services/websites")} className="hover:text-hive-yellow transition-colors">{t("footer.about") === "Nosotros" ? "Sitios Web" : t("footer.about") === "Über uns" ? "Websites" : "Websites"}</Link></li>
-              <li><Link to={lp("/services/seo")} className="hover:text-hive-yellow transition-colors">SEO</Link></li>
-              <li><Link to={lp("/services/internal-tools")} className="hover:text-hive-yellow transition-colors">Internal Tools</Link></li>
-              <li><Link to={lp("/services")} className="hover:text-hive-yellow transition-colors text-slate-400">{t("footer.all_services")}</Link></li>
+              <li><Link href={lp("/services/google-ads")} className="hover:text-hive-yellow transition-colors">Google Ads</Link></li>
+              <li><Link href={lp("/services/websites")} className="hover:text-hive-yellow transition-colors">{t("footer.about") === "Nosotros" ? "Sitios Web" : t("footer.about") === "Über uns" ? "Websites" : "Websites"}</Link></li>
+              <li><Link href={lp("/services/seo")} className="hover:text-hive-yellow transition-colors">SEO</Link></li>
+              <li><Link href={lp("/services/internal-tools")} className="hover:text-hive-yellow transition-colors">Internal Tools</Link></li>
+              <li><Link href={lp("/services")} className="hover:text-hive-yellow transition-colors text-slate-400">{t("footer.all_services")}</Link></li>
             </ul>
           </div>
 
@@ -44,15 +46,15 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-slate-200 mb-3">{t("footer.company_heading")}</p>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><Link to={lp("/about")} className="hover:text-hive-yellow transition-colors">{t("footer.about")}</Link></li>
-              <li><Link to={lp("/blog")} className="hover:text-hive-yellow transition-colors">{t("footer.blog")}</Link></li>
-              <li><Link to={lp("/contact")} className="hover:text-hive-yellow transition-colors">{t("footer.contact")}</Link></li>
+              <li><Link href={lp("/about")} className="hover:text-hive-yellow transition-colors">{t("footer.about")}</Link></li>
+              <li><Link href={lp("/blog")} className="hover:text-hive-yellow transition-colors">{t("footer.blog")}</Link></li>
+              <li><Link href={lp("/contact")} className="hover:text-hive-yellow transition-colors">{t("footer.contact")}</Link></li>
             </ul>
             <p className="text-sm font-semibold text-slate-200 mb-3 mt-5">{t("footer.industries_heading")}</p>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><Link to={lp("/industries/construction")} className="hover:text-hive-yellow transition-colors">{t("footer.construction")}</Link></li>
-              <li><Link to={lp("/industries/hvac")} className="hover:text-hive-yellow transition-colors">{t("footer.hvac")}</Link></li>
-              <li><Link to={lp("/industries/manufacturing")} className="hover:text-hive-yellow transition-colors">{t("footer.manufacturing")}</Link></li>
+              <li><Link href={lp("/industries/construction")} className="hover:text-hive-yellow transition-colors">{t("footer.construction")}</Link></li>
+              <li><Link href={lp("/industries/hvac")} className="hover:text-hive-yellow transition-colors">{t("footer.hvac")}</Link></li>
+              <li><Link href={lp("/industries/manufacturing")} className="hover:text-hive-yellow transition-colors">{t("footer.manufacturing")}</Link></li>
             </ul>
           </div>
 
@@ -60,7 +62,7 @@ export default function Footer() {
           <div>
             <p className="text-sm font-semibold text-slate-200 mb-3">{t("footer.contact_heading")}</p>
             <div className="space-y-2 text-sm text-slate-400">
-              <Link to={lp("/contact")} className="flex items-center gap-2 hover:text-hive-yellow transition-colors">
+              <Link href={lp("/contact")} className="flex items-center gap-2 hover:text-hive-yellow transition-colors">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                 </svg>
@@ -84,7 +86,7 @@ export default function Footer() {
         <div className="mt-10 pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-slate-400">
           <p>&copy; {year} Hive Media. {t("footer.copyright")}</p>
           <div className="flex items-center gap-4">
-            <Link to="/portal/login" className="hover:text-hive-yellow transition-colors">{t("footer.client_portal")}</Link>
+            <Link href="/portal/login" className="hover:text-hive-yellow transition-colors">{t("footer.client_portal")}</Link>
             <span className="text-slate-700">|</span>
             <p>Guatemala</p>
           </div>

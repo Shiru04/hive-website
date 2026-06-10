@@ -1,6 +1,8 @@
+"use client";
+
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function ContactForm({ compact = false }) {
   const { t } = useTranslation();

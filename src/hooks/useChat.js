@@ -1,7 +1,9 @@
+"use client";
+
 import { useState, useEffect, useRef, useCallback } from "react";
 import { io } from "socket.io-client";
 
-const SOCKET_URL = import.meta.env.VITE_HUB_URL || "http://localhost:5000";
+const SOCKET_URL = process.env.NEXT_PUBLIC_HUB_URL || "http://localhost:5000";
 const STORAGE_KEY = "hive_chat_conversation_id";
 
 export function useChat() {
@@ -9,7 +11,7 @@ export function useChat() {
   const [isConnected, setIsConnected] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [conversationId, setConversationId] = useState(
-    () => localStorage.getItem(STORAGE_KEY)
+    () => (typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null)
   );
   const [status, setStatus] = useState("idle");
   const [agentName, setAgentName] = useState(null);

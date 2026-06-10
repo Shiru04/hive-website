@@ -1,4 +1,7 @@
-import { useLocation, Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLang } from "../hooks/useLang.js";
 
 const LANG_LABELS = { en: "EN", es: "ES", de: "DE" };
@@ -9,7 +12,7 @@ const LANG_LABELS = { en: "EN", es: "ES", de: "DE" };
  */
 export default function LanguageSwitcher({ className = "" }) {
   const { lang: currentLang, SUPPORTED_LANGS } = useLang();
-  const { pathname } = useLocation();
+  const pathname = usePathname() || "/";
 
   // Strip the current lang prefix and keep the rest of the path
   const restPath = pathname.replace(/^\/[a-z]{2}(\/|$)/, "/") || "/";
@@ -23,7 +26,7 @@ export default function LanguageSwitcher({ className = "" }) {
           <span key={lng} className="flex items-center gap-1">
             {i > 0 && <span className="text-slate-700 text-xs">|</span>}
             <Link
-              to={to}
+              href={to}
               className={`text-xs font-medium transition-colors px-1 py-0.5 rounded ${
                 isActive
                   ? "text-hive-yellow"

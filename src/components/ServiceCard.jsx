@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { useLang } from "../hooks/useLang.js";
 
@@ -74,7 +76,7 @@ export default function ServiceCard({ title, subtitle, description, bullets, slu
       <div className="mt-auto pt-3 flex items-center gap-4">
         {slug && (
           <Link
-            to={lp(`/services/${slug}`)}
+            href={lp(`/services/${slug}`)}
             className="inline-flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-hive-yellow transition-colors"
           >
             {t("service_card.learn_more")}
@@ -84,7 +86,7 @@ export default function ServiceCard({ title, subtitle, description, bullets, slu
           </Link>
         )}
         <Link
-          to={lp("/contact")}
+          href={lp("/contact")}
           className="inline-flex items-center gap-1 text-sm font-medium text-hive-yellow hover:underline group-hover:gap-2 transition-all"
         >
           {t("service_card.get_quote")}
