@@ -211,7 +211,7 @@
     "cta_btn": "Agendar llamada estratégica gratuita"
   },
   "service_card": {
-    "learn_more": "Saber más",
+    "learn_more": "Más sobre {{name}}",
     "get_quote": "Solicitar cotización"
   },
   "service_page": {
@@ -241,7 +241,7 @@
   "industry_page": {
     "challenges": "Desafíos que enfrentan las empresas de {{industry}}",
     "how_hive_helps": "Cómo ayuda Hive Media",
-    "learn_more_service": "Saber más sobre este servicio",
+    "learn_more_service": "Más sobre {{name}}",
     "services_for": "Servicios para empresas de {{industry}}",
     "cta_heading": "¿Listo para hacer crecer tu negocio de {{industry}}?",
     "cta_sub": "Agenda una llamada estratégica gratuita y te mostraremos cómo podemos ayudarte a generar más leads calificados.",

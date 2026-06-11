@@ -211,7 +211,7 @@
     "cta_btn": "Book a free strategy call"
   },
   "service_card": {
-    "learn_more": "Learn more",
+    "learn_more": "More about {{name}}",
     "get_quote": "Get a quote"
   },
   "service_page": {
@@ -241,7 +241,7 @@
   "industry_page": {
     "challenges": "Challenges {{industry}} companies face",
     "how_hive_helps": "How Hive Media helps",
-    "learn_more_service": "Learn more about this service",
+    "learn_more_service": "More about {{name}}",
     "services_for": "Services for {{industry}} companies",
     "cta_heading": "Ready to grow your {{industry}} business?",
     "cta_sub": "Book a free strategy call and we'll show you how we can help you generate more qualified leads.",

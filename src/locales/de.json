@@ -211,7 +211,7 @@
     "cta_btn": "Kostenloses Strategiegespräch buchen"
   },
   "service_card": {
-    "learn_more": "Mehr erfahren",
+    "learn_more": "Mehr über {{name}}",
     "get_quote": "Angebot anfordern"
   },
   "service_page": {
@@ -241,7 +241,7 @@
   "industry_page": {
     "challenges": "Herausforderungen für {{industry}}-Unternehmen",
     "how_hive_helps": "Wie Hive Media hilft",
-    "learn_more_service": "Mehr über diese Leistung erfahren",
+    "learn_more_service": "Mehr über {{name}}",
     "services_for": "Leistungen für {{industry}}-Unternehmen",
     "cta_heading": "Bereit, Ihr {{industry}}-Unternehmen zu wachsen?",
     "cta_sub": "Buchen Sie ein kostenloses Strategiegespräch und wir zeigen Ihnen, wie wir Ihnen helfen können, mehr qualifizierte Leads zu generieren.",

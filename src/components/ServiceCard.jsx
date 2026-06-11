@@ -7,7 +7,7 @@ import { SERVICE_ICONS } from "./serviceIcons.jsx";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
 
-export default function ServiceCard({ title, subtitle, description, bullets, slug }) {
+export default function ServiceCard({ title, shortTitle, subtitle, description, bullets, slug }) {
   const { t } = useTranslation();
   const { lp } = useLang();
   // Look up icon by slug (preferred) or by title (legacy fallback)
@@ -45,7 +45,7 @@ export default function ServiceCard({ title, subtitle, description, bullets, slu
             href={lp(`/services/${slug}`)}
             className="inline-flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-hive-yellow transition-colors"
           >
-            {t("service_card.learn_more")}
+            {t("service_card.learn_more", { name: shortTitle || title })}
             <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
