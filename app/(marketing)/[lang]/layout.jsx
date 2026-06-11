@@ -136,6 +136,10 @@ export function generateStaticParams() {
   return SUPPORTED_LANGS.map((lang) => ({ lang }));
 }
 
+// Only en/es/de are valid segments — anything else (e.g. /foo.png reaching
+// this route) must 404 instead of soft-rendering the home page.
+export const dynamicParams = false;
+
 const SKIP_LINK_LABEL = {
   en: "Skip to content",
   es: "Saltar al contenido",
