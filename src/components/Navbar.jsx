@@ -38,11 +38,11 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-40 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/60">
       <nav className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <Link href={lp("/")} onClick={close} className="flex items-center">
+        <Link href={lp("/")} onClick={close} className="flex items-center shrink-0">
           <Image
             src={LogoHive}
             alt="Hive Media logo"
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-10 lg:h-12 w-auto object-contain"
             width={132}
             height={60}
             priority
@@ -50,7 +50,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {links.map((link) => (
             <Link
               key={link.to}
@@ -67,7 +67,7 @@ export default function Navbar() {
           <Link
             href={lp("/contact")}
             onClick={close}
-            className="group ml-3 inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-5 py-2 text-sm font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition"
+            className="group ml-3 inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-hive-yellow bg-hive-yellow px-5 py-2 text-sm font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition"
           >
             {t("nav.strategy_call")}
             <svg aria-hidden="true" className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center rounded-lg border border-slate-700 p-2 text-slate-200 hover:border-slate-500 transition-colors"
+          className="lg:hidden inline-flex items-center justify-center rounded-lg border border-slate-700 p-2 text-slate-200 hover:border-slate-500 transition-colors"
           onClick={toggle}
           aria-label="Toggle navigation"
           aria-expanded={open}
@@ -97,7 +97,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl">
+        <div className="lg:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl">
           <div className="max-w-[1500px] mx-auto px-4 py-4 flex flex-col gap-1">
             {links.map((link) => (
               <Link
