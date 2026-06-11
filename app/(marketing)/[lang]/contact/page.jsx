@@ -1,5 +1,6 @@
 import Contact from "@/views/Contact.jsx";
 import { buildMetadata, t } from "@/seo/metadata.js";
+import PageTransition from "@/components/PageTransition.jsx";
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
@@ -12,5 +13,9 @@ export async function generateMetadata({ params }) {
 }
 
 export default function Page() {
-  return <Contact />;
+  return (
+    <PageTransition>
+      <Contact />
+    </PageTransition>
+  );
 }

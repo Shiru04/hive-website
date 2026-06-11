@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import LogoHive from "../assets/logo-hive.webp";
+import HiveLogo from "./HiveLogo.jsx";
 import LanguageSwitcher from "./LanguageSwitcher.jsx";
 import { useLang } from "../hooks/useLang.js";
 
@@ -39,14 +38,7 @@ export default function Navbar() {
     <header className="fixed top-0 inset-x-0 z-40 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/60">
       <nav className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link href={lp("/")} onClick={close} className="flex items-center shrink-0">
-          <Image
-            src={LogoHive}
-            alt="Hive Media logo"
-            className="h-10 lg:h-12 w-auto object-contain"
-            width={132}
-            height={60}
-            priority
-          />
+          <HiveLogo className="h-10 lg:h-12" />
         </Link>
 
         {/* Desktop nav */}

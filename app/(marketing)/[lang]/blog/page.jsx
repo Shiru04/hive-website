@@ -1,5 +1,6 @@
 import Blog from "@/views/Blog.jsx";
 import { buildMetadata } from "@/seo/metadata.js";
+import PageTransition from "@/components/PageTransition.jsx";
 
 // Blog content lives in the API — render on every request so new posts
 // show up without a redeploy.
@@ -35,5 +36,9 @@ async function fetchPosts() {
 export default async function Page({ params }) {
   const { lang } = await params;
   const { posts, status } = await fetchPosts();
-  return <Blog posts={posts} status={status} lang={lang} />;
+  return (
+    <PageTransition>
+      <Blog posts={posts} status={status} lang={lang} />
+    </PageTransition>
+  );
 }

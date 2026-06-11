@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import Reveal from "./Reveal.jsx";
 
 const ICONS = [
   <svg aria-hidden="true" className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" key="0">
@@ -31,9 +32,9 @@ export default function WhyHive() {
       </div>
       <div className="grid gap-6 md:grid-cols-3">
         {items.map((item, idx) => (
+          <Reveal key={idx} delay={idx * 90} className="h-full">
           <div
-            key={idx}
-            className="group rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-left hover:border-hive-yellow/50 transition"
+            className="group h-full rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-left hover:border-hive-yellow/50 transition"
           >
             <div className="w-11 h-11 rounded-xl border border-slate-700 bg-slate-950/60 flex items-center justify-center text-hive-yellow mb-4 group-hover:border-hive-yellow/40 group-hover:bg-hive-yellow/10 transition-colors">
               {ICONS[idx]}
@@ -43,6 +44,7 @@ export default function WhyHive() {
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed">{item.description}</p>
           </div>
+          </Reveal>
         ))}
       </div>
     </section>

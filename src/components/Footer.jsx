@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import LogoHive from "../assets/logo-hive.webp";
+import HiveLogo from "./HiveLogo.jsx";
 import { useLang } from "../hooks/useLang.js";
 
 export default function Footer() {
@@ -18,13 +17,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href={lp("/")} className="inline-block mb-3">
-              <Image
-                src={LogoHive}
-                alt="Hive Media logo"
-                className="h-10 w-auto object-contain"
-                width={132}
-                height={60}
-              />
+              <HiveLogo className="h-10" />
             </Link>
             <p className="text-sm text-slate-400 max-w-xs leading-relaxed">
               {t("footer.tagline")}

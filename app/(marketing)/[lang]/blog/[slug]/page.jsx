@@ -1,6 +1,7 @@
 import { cache } from "react";
 import BlogPost from "@/views/BlogPost.jsx";
 import { buildMetadata } from "@/seo/metadata.js";
+import PageTransition from "@/components/PageTransition.jsx";
 
 // Articles live in the API — render on every request so edits and new
 // posts are visible immediately without a redeploy.
@@ -58,5 +59,9 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   const { lang, slug } = await params;
   const { post, status } = await fetchPost(slug);
-  return <BlogPost post={post} slug={slug} lang={lang} status={status} />;
+  return (
+    <PageTransition>
+      <BlogPost post={post} slug={slug} lang={lang} status={status} />
+    </PageTransition>
+  );
 }

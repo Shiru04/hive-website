@@ -1,3 +1,4 @@
+import { unstable_ViewTransition as ViewTransition } from "react";
 import { Montserrat } from "next/font/google";
 import "@/styles/index.css";
 import I18nProvider from "@/components/I18nProvider.jsx";
@@ -156,7 +157,9 @@ export default async function MarketingLayout({ children, params }) {
         <JsonLd schema={ORG_SCHEMA} />
         <I18nProvider lang={resolvedLang}>
           <div className="min-h-screen flex flex-col bg-slate-950 text-slate-50">
-            <Navbar />
+            <ViewTransition name="site-nav" default="none">
+              <Navbar />
+            </ViewTransition>
             <main id="main-content" className="flex-1 pt-20 pb-12">{children}</main>
             <Footer />
             <LazyChatWidget />

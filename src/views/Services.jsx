@@ -6,6 +6,7 @@ import JsonLd from "../seo/JsonLd.jsx";
 import ServiceCard from "../components/ServiceCard.jsx";
 import { useLang } from "../hooks/useLang.js";
 import { useLocalizedServices } from "../hooks/useLocalizedData.js";
+import Reveal from "../components/Reveal.jsx";
 
 export default function Services() {
   const { t } = useTranslation();
@@ -36,8 +37,10 @@ export default function Services() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} slug={service.slug} {...service} />
+          {services.map((service, i) => (
+            <Reveal key={service.slug} delay={(i % 2) * 90} className="h-full">
+              <ServiceCard slug={service.slug} {...service} />
+            </Reveal>
           ))}
         </div>
 

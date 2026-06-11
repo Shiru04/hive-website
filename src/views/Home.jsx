@@ -9,6 +9,7 @@ import WhyHive from "../components/WhyHive.jsx";
 import ContactForm from "../components/ContactForm.jsx";
 import { useLang } from "../hooks/useLang.js";
 import { useLocalizedServices } from "../hooks/useLocalizedData.js";
+import Reveal from "../components/Reveal.jsx";
 
 const FEATURED_SLUGS = ["google-ads", "websites", "internal-tools"];
 
@@ -31,6 +32,7 @@ export default function Home() {
       <Hero />
 
       {/* Services section */}
+      <Reveal>
       <section className="py-14 border-t border-slate-800">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
@@ -52,15 +54,21 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {featuredServices.map((service) => (
-            <ServiceCard key={service.slug} {...service} />
+          {featuredServices.map((service, i) => (
+            <Reveal key={service.slug} delay={i * 90} className="h-full">
+              <ServiceCard {...service} />
+            </Reveal>
           ))}
         </div>
       </section>
+      </Reveal>
 
-      <WhyHive />
+      <Reveal>
+        <WhyHive />
+      </Reveal>
 
       {/* Process / How it works */}
+      <Reveal>
       <section className="py-14 border-t border-slate-800">
         <div className="max-w-4xl mx-auto text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3">
@@ -81,8 +89,10 @@ export default function Home() {
           ))}
         </div>
       </section>
+      </Reveal>
 
       {/* CTA + Contact Form */}
+      <Reveal>
       <section className="py-14 border-t border-slate-800">
         <div className="grid gap-10 md:grid-cols-[3fr,2fr] items-start">
           <div>
@@ -118,6 +128,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </Reveal>
     </>
   );
 }

@@ -10,6 +10,8 @@ import { buildServiceSchema } from "../seo/schemaHelpers.js";
 import NotFound from "./NotFound.jsx";
 import { useLang } from "../hooks/useLang.js";
 import { useLocalizedService, useLocalizedRelatedServices } from "../hooks/useLocalizedData.js";
+import { SERVICE_ICONS } from "../components/serviceIcons.jsx";
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 export default function ServicePage() {
   const { slug } = useParams();
@@ -36,6 +38,13 @@ export default function ServicePage() {
 
           {/* Hero */}
           <div className="max-w-3xl">
+            {SERVICE_ICONS[slug] && (
+              <ViewTransition name={`svc-${slug}`} share="morph" default="none">
+                <div className="w-14 h-14 rounded-xl border border-hive-yellow/30 bg-hive-yellow/10 flex items-center justify-center text-hive-yellow mb-5">
+                  {SERVICE_ICONS[slug]}
+                </div>
+              </ViewTransition>
+            )}
             <p className="inline-flex items-center gap-2 rounded-full border border-hive-yellow/30 bg-hive-yellow/5 px-4 py-1.5 text-sm font-medium text-hive-yellow mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-hive-yellow" />
               {service.shortTitle}

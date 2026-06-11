@@ -3,6 +3,7 @@ import IndustryPage from "@/views/IndustryPage.jsx";
 import { INDUSTRIES } from "@/data/industries.js";
 import { getLocalizedIndustry } from "@/data/localize.js";
 import { buildMetadata } from "@/seo/metadata.js";
+import PageTransition from "@/components/PageTransition.jsx";
 
 export function generateStaticParams() {
   return INDUSTRIES.map((i) => ({ slug: i.slug }));
@@ -23,5 +24,9 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   const { lang, slug } = await params;
   if (!getLocalizedIndustry(slug, lang)) notFound();
-  return <IndustryPage />;
+  return (
+    <PageTransition>
+      <IndustryPage />
+    </PageTransition>
+  );
 }

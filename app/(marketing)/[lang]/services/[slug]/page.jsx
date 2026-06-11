@@ -3,6 +3,7 @@ import ServicePage from "@/views/ServicePage.jsx";
 import { SERVICES } from "@/data/services.js";
 import { getLocalizedService } from "@/data/localize.js";
 import { buildMetadata } from "@/seo/metadata.js";
+import PageTransition from "@/components/PageTransition.jsx";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -23,5 +24,9 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   const { lang, slug } = await params;
   if (!getLocalizedService(slug, lang)) notFound();
-  return <ServicePage />;
+  return (
+    <PageTransition>
+      <ServicePage />
+    </PageTransition>
+  );
 }

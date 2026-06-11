@@ -4,6 +4,9 @@ const nextConfig = {
     // The project keeps its own flat eslint config (run via `npm run lint`).
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    viewTransition: true,
+  },
   env: {
     // Inlined at build time — static marketing pages only change on deploy,
     // so the build date is their sitemap <lastmod>.
