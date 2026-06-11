@@ -149,7 +149,7 @@ function IntroForm({ onStart }) {
 
       <button
         type="submit"
-        className="rounded-full border border-hive-yellow bg-hive-yellow px-4 py-2 text-sm font-semibold text-slate-950 hover:brightness-105 transition-all"
+        className="rounded-full border border-hive-yellow bg-hive-yellow px-4 py-2 text-sm font-semibold text-slate-950 hover:brightness-105 transition"
       >
         Start chat
       </button>
@@ -236,7 +236,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Open chat"}
-        className={`fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-hive-yellow text-slate-950 shadow-lg shadow-hive-yellow/20 transition-all duration-300 hover:scale-105 hover:brightness-110 ${
+        className={`fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-hive-yellow text-slate-950 shadow-lg shadow-hive-yellow/20 transition duration-300 hover:scale-105 hover:brightness-110 ${
           open ? "scale-0 opacity-0 pointer-events-none" : "scale-100 opacity-100"
         }`}
       >
@@ -250,7 +250,7 @@ export default function ChatWidget() {
 
       {/* ---- Chat panel ---- */}
       <div
-        className={`fixed bottom-5 right-5 z-50 flex flex-col overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-2xl transition-all duration-300 origin-bottom-right ${
+        className={`fixed bottom-5 right-5 z-50 flex flex-col overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-2xl transition duration-300 origin-bottom-right ${
           open
             ? "scale-100 opacity-100 pointer-events-auto"
             : "scale-0 opacity-0 pointer-events-none"
@@ -281,14 +281,14 @@ export default function ChatWidget() {
         </div>
 
         {/* Body */}
-        <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2.5 scroll-smooth">
+        <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-3 space-y-2.5 scroll-smooth">
           {status === "idle" && <IntroForm onStart={handleStartChat} />}
 
           {(status === "active" || status === "connecting" || status === "closed") && (
             <>
               {messages.length === 0 && status !== "closed" && (
                 <p className="py-8 text-center text-sm text-slate-500">
-                  Connecting you with our team...
+                  Connecting you with our team…
                 </p>
               )}
 
@@ -344,7 +344,7 @@ export default function ChatWidget() {
               type="submit"
               disabled={!input.trim()}
               aria-label="Send message"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-hive-yellow text-slate-950 transition-all hover:brightness-110 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-hive-yellow text-slate-950 transition hover:brightness-110 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               <SendIcon />
             </button>

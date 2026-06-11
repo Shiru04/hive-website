@@ -4,6 +4,27 @@ import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+/** Shared lead submission used by both the step form and the compact form. */
+async function submitLead(form, t, { fallbackMessage = "" } = {}) {
+  const message = form.services?.length
+    ? `[${form.services.join(", ")}] ${form.message || ""}`
+    : form.message || fallbackMessage;
+  const res = await fetch(`${API_URL}/api/public/leads`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: form.name,
+      email: form.email,
+      message,
+      source: "organic",
+    }),
+  });
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data?.message || t("contact_form.error_submit"));
+  }
+}
+
 export default function ContactForm({ compact = false }) {
   const { t } = useTranslation();
 
@@ -83,22 +104,7 @@ export default function ContactForm({ compact = false }) {
     setStatus("loading");
     setErrorMessage("");
     try {
-      const res = await fetch(`${API_URL}/api/public/leads`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.services.length
-            ? `[${form.services.join(", ")}] ${form.message}`
-            : form.message,
-          source: "organic"
-        })
-      });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.message || t("contact_form.error_submit"));
-      }
+      await submitLead(form, t);
       setStatus("success");
     } catch (err) {
       console.error(err);
@@ -143,7 +149,7 @@ export default function ContactForm({ compact = false }) {
                 className="text-sm text-slate-200 hover:text-hive-yellow transition-colors flex items-center gap-2"
               >
                 {a.value || <span className="text-slate-400 italic">{t("common.skipped")}</span>}
-                <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg aria-hidden="true" className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487z" />
                 </svg>
               </button>
@@ -173,7 +179,7 @@ export default function ContactForm({ compact = false }) {
                         }`}
                       >
                         {selected && (
-                          <svg className="w-3 h-3 inline-block mr-1 -mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                          <svg aria-hidden="true" className="w-3 h-3 inline-block mr-1 -mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                           </svg>
                         )}
@@ -231,7 +237,7 @@ export default function ContactForm({ compact = false }) {
                   onClick={handleNext}
                   disabled={!canAdvance()}
                   aria-label={t("contact_form.continue")}
-                  className="shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-hive-yellow text-slate-950 hover:brightness-110 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                  className="shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-hive-yellow text-slate-950 hover:brightness-110 disabled:opacity-30 disabled:cursor-not-allowed transition"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -241,7 +247,7 @@ export default function ContactForm({ compact = false }) {
             )}
 
             {status === "error" && (
-              <p className="text-sm text-red-400 mt-2">
+              <p className="text-sm text-red-400 mt-2" aria-live="polite">
                 {errorMessage || t("contact_form.error_generic")}
               </p>
             )}
@@ -251,7 +257,7 @@ export default function ContactForm({ compact = false }) {
             {STEPS.map((_, i) => (
               <div
                 key={i}
-                className={`h-1 rounded-full transition-all ${
+                className={`h-1 rounded-full transition ${
                   i <= step ? "bg-hive-yellow w-6" : "bg-slate-700 w-4"
                 }`}
               />
@@ -270,11 +276,11 @@ function StepActions({ canAdvance, onNext, isLast, isLoading, skipLabel, showSki
         type="button"
         onClick={onNext}
         disabled={!canAdvance || isLoading}
-        className="inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-5 py-2 text-sm font-semibold text-slate-950 hover:brightness-105 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+        className="inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-5 py-2 text-sm font-semibold text-slate-950 hover:brightness-105 disabled:opacity-40 disabled:cursor-not-allowed transition"
       >
         {isLoading ? t("contact_form.sending") : isLast ? t("contact_form.send") : t("contact_form.continue")}
         {!isLoading && (
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+          <svg aria-hidden="true" className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         )}
@@ -286,7 +292,7 @@ function StepActions({ canAdvance, onNext, isLast, isLoading, skipLabel, showSki
           className="inline-flex items-center gap-1 rounded-full border border-slate-600 px-4 py-2 text-sm font-medium text-slate-300 hover:border-hive-yellow/50 hover:text-hive-yellow transition-colors"
         >
           {skipLabel || t("contact_form.skip")}
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+          <svg aria-hidden="true" className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </button>
@@ -297,9 +303,9 @@ function StepActions({ canAdvance, onNext, isLast, isLoading, skipLabel, showSki
 
 function SuccessMessage({ t }) {
   return (
-    <div className="text-center py-6 space-y-3">
+    <div className="text-center py-6 space-y-3" aria-live="polite">
       <div className="w-12 h-12 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mx-auto">
-        <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+        <svg aria-hidden="true" className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
         </svg>
       </div>
@@ -319,22 +325,7 @@ function CompactForm({ form, setForm, status, onSubmit, setStatus, setErrorMessa
     setStatus("loading");
     setErrorMessage("");
     try {
-      const res = await fetch(`${API_URL}/api/public/leads`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.services?.length
-            ? `[${form.services.join(", ")}] ${form.message || ""}`
-            : form.message || "Interested in learning more",
-          source: "organic"
-        })
-      });
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.message || t("contact_form.error_submit"));
-      }
+      await submitLead(form, t, { fallbackMessage: "Interested in learning more" });
       setStatus("success");
     } catch (err) {
       console.error(err);
@@ -377,7 +368,7 @@ function CompactForm({ form, setForm, status, onSubmit, setStatus, setErrorMessa
         {isSubmitting ? t("contact_form.sending") : t("contact_form.compact_cta")}
       </button>
       {status === "error" && (
-        <p className="text-xs text-red-400">{errorMessage || t("contact_form.error_generic")}</p>
+        <p className="text-xs text-red-400" aria-live="polite">{errorMessage || t("contact_form.error_generic")}</p>
       )}
     </form>
   );

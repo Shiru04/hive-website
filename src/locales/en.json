@@ -31,10 +31,26 @@
     "how_we_work_heading_highlight": "work together",
     "how_we_work_sub": "A straightforward process designed to deliver results quickly without the usual agency runaround.",
     "process": [
-      { "step": "01", "title": "Discovery call", "desc": "We learn about your business, current marketing and goals. No sales pitch—just honest conversation." },
-      { "step": "02", "title": "Audit & strategy", "desc": "We audit your ads, website and tracking, then build a 90-day roadmap with clear priorities." },
-      { "step": "03", "title": "Build & launch", "desc": "We execute on the plan—campaigns, pages, tools—while keeping you in the loop at every step." },
-      { "step": "04", "title": "Optimize & grow", "desc": "We track results weekly, refine what works, cut what doesn't, and scale what converts." }
+      {
+        "step": "01",
+        "title": "Discovery call",
+        "desc": "We learn about your business, current marketing and goals. No sales pitch—just honest conversation."
+      },
+      {
+        "step": "02",
+        "title": "Audit & strategy",
+        "desc": "We audit your ads, website and tracking, then build a 90-day roadmap with clear priorities."
+      },
+      {
+        "step": "03",
+        "title": "Build & launch",
+        "desc": "We execute on the plan—campaigns, pages, tools—while keeping you in the loop at every step."
+      },
+      {
+        "step": "04",
+        "title": "Optimize & grow",
+        "desc": "We track results weekly, refine what works, cut what doesn't, and scale what converts."
+      }
     ],
     "cta_heading_part1": "Ready to stop guessing and",
     "cta_heading_highlight": "start growing?",
@@ -49,9 +65,18 @@
     "heading_highlight": "Hive Media?",
     "sub": "We don't just run ads—we build the entire system that turns clicks into closed deals, so you can focus on running your business while leads come in consistently.",
     "items": [
-      { "title": "We understand service businesses", "description": "We work with HVAC, construction and home services providers. We know your sales cycles, seasonality and what a real qualified lead looks like." },
-      { "title": "Full technical stack in-house", "description": "Strategy, tracking, web development and internal tools under one roof. No finger-pointing between agencies and developers." },
-      { "title": "Obsessed with clarity and reporting", "description": "You get dashboards and reports that show where your money goes, what works, and what we are doing next—not vanity metrics." }
+      {
+        "title": "We understand service businesses",
+        "description": "We work with HVAC, construction and home services providers. We know your sales cycles, seasonality and what a real qualified lead looks like."
+      },
+      {
+        "title": "Full technical stack in-house",
+        "description": "Strategy, tracking, web development and internal tools under one roof. No finger-pointing between agencies and developers."
+      },
+      {
+        "title": "Obsessed with clarity and reporting",
+        "description": "You get dashboards and reports that show where your money goes, what works, and what we are doing next—not vanity metrics."
+      }
     ]
   },
   "common": {
@@ -84,7 +109,8 @@
     "manufacturing": "Manufacturing",
     "about": "About",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "websites": "Websites"
   },
   "about": {
     "badge": "About us",
@@ -97,9 +123,18 @@
     "philosophy_highlight": "strategy first, then execution, then iteration.",
     "philosophy_rest": "We don't believe in vanity metrics, long-term lock-in contracts, or doing work that doesn't directly move your business forward.",
     "values": [
-      { "title": "Technical and marketing in one place", "desc": "We bridge the gap between the marketing strategy and the code that needs to be written to make it real." },
-      { "title": "Transparent communication", "desc": "We share what we are doing, why we are doing it, and how it is performing—good or bad." },
-      { "title": "Long-term partnerships", "desc": "Our best work happens with clients that see us as partners and collaborators, not just another vendor." }
+      {
+        "title": "Technical and marketing in one place",
+        "desc": "We bridge the gap between the marketing strategy and the code that needs to be written to make it real."
+      },
+      {
+        "title": "Transparent communication",
+        "desc": "We share what we are doing, why we are doing it, and how it is performing—good or bad."
+      },
+      {
+        "title": "Long-term partnerships",
+        "desc": "Our best work happens with clients that see us as partners and collaborators, not just another vendor."
+      }
     ],
     "how_we_work_heading": "How we like to work",
     "steps": [
@@ -117,9 +152,18 @@
     "sub": "Fill out the form and we'll get back to you within 1–2 business days with next steps or a proposal for a strategy call.",
     "what_next_heading": "What happens next",
     "steps": [
-      { "title": "We review your info", "desc": "We read your message and check if we're a good fit." },
-      { "title": "We get context", "desc": "We may request view-only access to your website or ad account." },
-      { "title": "Strategy call", "desc": "We schedule a call to walk through priorities and next steps." }
+      {
+        "title": "We review your info",
+        "desc": "We read your message and check if we're a good fit."
+      },
+      {
+        "title": "We get context",
+        "desc": "We may request view-only access to your website or ad account."
+      },
+      {
+        "title": "Strategy call",
+        "desc": "We schedule a call to walk through priorities and next steps."
+      }
     ],
     "trust": [
       "No obligation — no spam, no strings attached",
@@ -139,7 +183,7 @@
     "step_message_ph": "Tell us briefly about your business, goals, or questions.",
     "continue": "Continue",
     "send": "Send message",
-    "sending": "Sending...",
+    "sending": "Sending…",
     "skip": "Skip & send",
     "success_title": "Message sent!",
     "success_sub": "We received your message and will follow up within 1–2 business days.",
@@ -148,7 +192,14 @@
     "compact_name_ph": "Your name",
     "compact_email_ph": "you@company.com",
     "compact_cta": "Get my free roadmap",
-    "services": ["Google Ads", "Website redesign", "SEO", "Internal tools", "Full strategy", "Not sure yet"]
+    "services": [
+      "Google Ads",
+      "Website redesign",
+      "SEO",
+      "Internal tools",
+      "Full strategy",
+      "Not sure yet"
+    ]
   },
   "services_page": {
     "badge": "Our services",

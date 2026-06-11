@@ -1,5 +1,6 @@
 import Link from "next/link";
 import JsonLd from "../seo/JsonLd.jsx";
+import { formatDate } from "../lib/formatDate.js";
 
 // ─── TipTap JSON → React renderer ───────────────────────────────────────
 
@@ -142,7 +143,7 @@ function renderTipTapNode(node, idx = 0) {
             aria-hidden="true"
           >
             {checked && (
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path
                   d="M2.5 6L5 8.5L9.5 3.5"
                   stroke="#020617"
@@ -647,7 +648,7 @@ export default function BlogPost({ post, slug, lang = "en", status = "ready" }) 
         <p className="text-xs text-slate-400 mb-4">
           {post.publishedAt && (
             <>
-              <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+              <time dateTime={post.publishedAt}>{formatDate(post.publishedAt, lang)}</time>
               <span className="mx-1">&bull;</span>
             </>
           )}

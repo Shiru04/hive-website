@@ -80,7 +80,7 @@ export default function PortalProjects() {
                 {totalTasks > 0 && (
                   <div className="flex items-center gap-2">
                     <div className="flex-1 h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-hive-yellow rounded-full transition-all" style={{ width: `${pct}%` }} />
+                      <div className="h-full bg-hive-yellow rounded-full transition" style={{ width: `${pct}%` }} />
                     </div>
                     <span className="text-[10px] text-slate-500 shrink-0">{done}/{totalTasks} tasks</span>
                   </div>

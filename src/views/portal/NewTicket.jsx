@@ -110,7 +110,7 @@ export default function NewTicket() {
         </div>
 
         <button type="submit" disabled={loading}
-          className="w-full rounded-lg bg-hive-yellow px-4 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 disabled:opacity-50 transition-all"
+          className="w-full rounded-lg bg-hive-yellow px-4 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 disabled:opacity-50 transition"
         >
           {loading ? "Creating..." : "Submit Ticket"}
         </button>

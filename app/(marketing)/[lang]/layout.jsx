@@ -134,6 +134,12 @@ export function generateStaticParams() {
   return SUPPORTED_LANGS.map((lang) => ({ lang }));
 }
 
+const SKIP_LINK_LABEL = {
+  en: "Skip to content",
+  es: "Saltar al contenido",
+  de: "Zum Inhalt springen",
+};
+
 export default async function MarketingLayout({ children, params }) {
   const { lang } = await params;
   const resolvedLang = SUPPORTED_LANGS.includes(lang) ? lang : "en";
@@ -141,11 +147,17 @@ export default async function MarketingLayout({ children, params }) {
   return (
     <html lang={resolvedLang} className={montserrat.variable}>
       <body className="bg-slate-950 text-slate-50">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-hive-yellow focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-950"
+        >
+          {SKIP_LINK_LABEL[resolvedLang]}
+        </a>
         <JsonLd schema={ORG_SCHEMA} />
         <I18nProvider lang={resolvedLang}>
           <div className="min-h-screen flex flex-col bg-slate-950 text-slate-50">
             <Navbar />
-            <main className="flex-1 pt-20 pb-12">{children}</main>
+            <main id="main-content" className="flex-1 pt-20 pb-12">{children}</main>
             <Footer />
             <LazyChatWidget />
           </div>

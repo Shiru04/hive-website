@@ -17,7 +17,7 @@ export default function TicketsList() {
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-xl font-bold">My Tickets</h1>
         <Link href="/portal/tickets/new"
-          className="rounded-lg bg-hive-yellow px-4 py-2 text-sm font-semibold text-slate-950 hover:brightness-110 transition-all"
+          className="rounded-lg bg-hive-yellow px-4 py-2 text-sm font-semibold text-slate-950 hover:brightness-110 transition"
         >
           New Ticket
         </Link>

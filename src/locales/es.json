@@ -31,10 +31,26 @@
     "how_we_work_heading_highlight": "trabajamos juntos",
     "how_we_work_sub": "Un proceso directo diseñado para entregar resultados rápidamente, sin el habitual rodeo de las agencias.",
     "process": [
-      { "step": "01", "title": "Llamada de descubrimiento", "desc": "Conocemos tu negocio, tu marketing actual y tus objetivos. Sin discurso de ventas—solo conversación honesta." },
-      { "step": "02", "title": "Auditoría y estrategia", "desc": "Auditamos tus anuncios, sitio web y seguimiento, y construimos un plan de 90 días con prioridades claras." },
-      { "step": "03", "title": "Implementación y lanzamiento", "desc": "Ejecutamos el plan—campañas, páginas, herramientas—manteniéndote informado en cada paso." },
-      { "step": "04", "title": "Optimización y crecimiento", "desc": "Seguimos los resultados semanalmente, refinamos lo que funciona, eliminamos lo que no, y escalamos lo que convierte." }
+      {
+        "step": "01",
+        "title": "Llamada de descubrimiento",
+        "desc": "Conocemos tu negocio, tu marketing actual y tus objetivos. Sin discurso de ventas—solo conversación honesta."
+      },
+      {
+        "step": "02",
+        "title": "Auditoría y estrategia",
+        "desc": "Auditamos tus anuncios, sitio web y seguimiento, y construimos un plan de 90 días con prioridades claras."
+      },
+      {
+        "step": "03",
+        "title": "Implementación y lanzamiento",
+        "desc": "Ejecutamos el plan—campañas, páginas, herramientas—manteniéndote informado en cada paso."
+      },
+      {
+        "step": "04",
+        "title": "Optimización y crecimiento",
+        "desc": "Seguimos los resultados semanalmente, refinamos lo que funciona, eliminamos lo que no, y escalamos lo que convierte."
+      }
     ],
     "cta_heading_part1": "¿Listo para dejar de adivinar y",
     "cta_heading_highlight": "empezar a crecer?",
@@ -49,9 +65,18 @@
     "heading_highlight": "Hive Media?",
     "sub": "No solo gestionamos anuncios—construimos el sistema completo que convierte clics en negocios cerrados, para que puedas enfocarte en operar tu negocio mientras los leads llegan constantemente.",
     "items": [
-      { "title": "Entendemos las empresas de servicios", "description": "Trabajamos con empresas de HVAC, construcción y servicios del hogar. Conocemos tus ciclos de venta, estacionalidad y cómo es un lead calificado real." },
-      { "title": "Stack técnico completo interno", "description": "Estrategia, seguimiento, desarrollo web y herramientas internas bajo un mismo techo. Sin señalar con el dedo entre agencias y desarrolladores." },
-      { "title": "Obsesionados con la claridad y los reportes", "description": "Obtienes dashboards e informes que muestran a dónde va tu dinero, qué funciona y qué haremos a continuación—sin métricas de vanidad." }
+      {
+        "title": "Entendemos las empresas de servicios",
+        "description": "Trabajamos con empresas de HVAC, construcción y servicios del hogar. Conocemos tus ciclos de venta, estacionalidad y cómo es un lead calificado real."
+      },
+      {
+        "title": "Stack técnico completo interno",
+        "description": "Estrategia, seguimiento, desarrollo web y herramientas internas bajo un mismo techo. Sin señalar con el dedo entre agencias y desarrolladores."
+      },
+      {
+        "title": "Obsesionados con la claridad y los reportes",
+        "description": "Obtienes dashboards e informes que muestran a dónde va tu dinero, qué funciona y qué haremos a continuación—sin métricas de vanidad."
+      }
     ]
   },
   "common": {
@@ -84,7 +109,8 @@
     "manufacturing": "Manufactura",
     "about": "Nosotros",
     "blog": "Blog",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "websites": "Sitios Web"
   },
   "about": {
     "badge": "Nosotros",
@@ -97,9 +123,18 @@
     "philosophy_highlight": "estrategia primero, luego ejecución, luego iteración.",
     "philosophy_rest": "No creemos en métricas de vanidad, contratos de exclusividad a largo plazo, ni en hacer trabajo que no mueva directamente tu negocio hacia adelante.",
     "values": [
-      { "title": "Técnica y marketing en un solo lugar", "desc": "Cerramos la brecha entre la estrategia de marketing y el código que hay que escribir para hacerla realidad." },
-      { "title": "Comunicación transparente", "desc": "Compartimos lo que hacemos, por qué lo hacemos y cómo va el rendimiento—bueno o malo." },
-      { "title": "Alianzas a largo plazo", "desc": "Nuestro mejor trabajo ocurre con clientes que nos ven como socios y colaboradores, no solo como otro proveedor." }
+      {
+        "title": "Técnica y marketing en un solo lugar",
+        "desc": "Cerramos la brecha entre la estrategia de marketing y el código que hay que escribir para hacerla realidad."
+      },
+      {
+        "title": "Comunicación transparente",
+        "desc": "Compartimos lo que hacemos, por qué lo hacemos y cómo va el rendimiento—bueno o malo."
+      },
+      {
+        "title": "Alianzas a largo plazo",
+        "desc": "Nuestro mejor trabajo ocurre con clientes que nos ven como socios y colaboradores, no solo como otro proveedor."
+      }
     ],
     "how_we_work_heading": "Cómo nos gusta trabajar",
     "steps": [
@@ -117,9 +152,18 @@
     "sub": "Completa el formulario y te responderemos en 1–2 días hábiles con los próximos pasos o una propuesta para una llamada estratégica.",
     "what_next_heading": "¿Qué pasa después?",
     "steps": [
-      { "title": "Revisamos tu información", "desc": "Leemos tu mensaje y verificamos si somos una buena combinación." },
-      { "title": "Obtenemos contexto", "desc": "Podemos solicitar acceso de solo lectura a tu sitio web o cuenta de anuncios." },
-      { "title": "Llamada estratégica", "desc": "Programamos una llamada para revisar prioridades y próximos pasos." }
+      {
+        "title": "Revisamos tu información",
+        "desc": "Leemos tu mensaje y verificamos si somos una buena combinación."
+      },
+      {
+        "title": "Obtenemos contexto",
+        "desc": "Podemos solicitar acceso de solo lectura a tu sitio web o cuenta de anuncios."
+      },
+      {
+        "title": "Llamada estratégica",
+        "desc": "Programamos una llamada para revisar prioridades y próximos pasos."
+      }
     ],
     "trust": [
       "Sin compromiso — sin spam, sin condiciones",
@@ -139,7 +183,7 @@
     "step_message_ph": "Cuéntanos brevemente sobre tu negocio, objetivos o preguntas.",
     "continue": "Continuar",
     "send": "Enviar mensaje",
-    "sending": "Enviando...",
+    "sending": "Enviando…",
     "skip": "Omitir y enviar",
     "success_title": "¡Mensaje enviado!",
     "success_sub": "Recibimos tu mensaje y haremos seguimiento en 1–2 días hábiles.",
@@ -148,7 +192,14 @@
     "compact_name_ph": "Tu nombre",
     "compact_email_ph": "tu@empresa.com",
     "compact_cta": "Obtener mi hoja de ruta gratuita",
-    "services": ["Google Ads", "Rediseño de sitio web", "SEO", "Herramientas internas", "Estrategia completa", "Aún no lo sé"]
+    "services": [
+      "Google Ads",
+      "Rediseño de sitio web",
+      "SEO",
+      "Herramientas internas",
+      "Estrategia completa",
+      "Aún no lo sé"
+    ]
   },
   "services_page": {
     "badge": "Nuestros servicios",

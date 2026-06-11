@@ -1,5 +1,6 @@
 import Link from "next/link";
 import JsonLd from "../seo/JsonLd.jsx";
+import { formatDate } from "../lib/formatDate.js";
 
 /**
  * Server-rendered blog index. Receives the posts already fetched by the
@@ -56,9 +57,9 @@ export default function Blog({ posts = [], status = "ready", lang = "en" }) {
                 <p className="text-xs text-slate-400 mb-2">
                   {post.publishedAt && (
                     <>
-                      <span>
-                        {new Date(post.publishedAt).toLocaleDateString()}
-                      </span>
+                      <time dateTime={post.publishedAt}>
+                        {formatDate(post.publishedAt, lang)}
+                      </time>
                       <span className="mx-1">•</span>
                     </>
                   )}

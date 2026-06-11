@@ -45,10 +45,10 @@ export default function IndustryPage() {
             </p>
             <Link
               href={lp("/contact")}
-              className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition-all"
+              className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition"
             >
               {t("industry_page.get_strategy")}
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <svg aria-hidden="true" className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </Link>
@@ -67,7 +67,7 @@ export default function IndustryPage() {
                 className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6"
               >
                 <div className="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center mb-4">
-                  <svg className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <svg aria-hidden="true" className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                   </svg>
                 </div>
@@ -87,7 +87,7 @@ export default function IndustryPage() {
             {industry.solutions.map((solution, i) => (
               <div
                 key={solution.title}
-                className="flex items-start gap-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 hover:border-hive-yellow/50 transition-all"
+                className="flex items-start gap-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 hover:border-hive-yellow/50 transition"
               >
                 <div className="w-8 h-8 rounded-lg bg-hive-yellow/10 border border-hive-yellow/30 flex items-center justify-center text-sm font-bold text-hive-yellow shrink-0">
                   {i + 1}
@@ -100,7 +100,7 @@ export default function IndustryPage() {
                     className="inline-flex items-center gap-1 text-sm font-medium text-hive-yellow hover:underline"
                   >
                     {t("industry_page.learn_more_service")}
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </Link>
@@ -120,10 +120,10 @@ export default function IndustryPage() {
               <Link
                 key={service.slug}
                 href={lp(`/services/${service.slug}`)}
-                className="group flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 p-4 hover:border-hive-yellow/50 transition-all"
+                className="group flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/70 p-4 hover:border-hive-yellow/50 transition"
               >
                 <div className="w-10 h-10 rounded-lg bg-hive-yellow/10 border border-hive-yellow/30 flex items-center justify-center text-hive-yellow shrink-0 group-hover:bg-hive-yellow/20 transition-colors">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <svg aria-hidden="true" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </div>
@@ -146,10 +146,10 @@ export default function IndustryPage() {
           </p>
           <Link
             href={lp("/contact")}
-            className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition-all"
+            className="group inline-flex items-center gap-2 rounded-full border border-hive-yellow bg-hive-yellow px-6 py-3 text-base font-semibold text-slate-950 shadow-hive-glow hover:brightness-105 transition"
           >
             {t("industry_page.cta_btn")}
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+            <svg aria-hidden="true" className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </Link>

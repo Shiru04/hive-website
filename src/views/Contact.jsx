@@ -65,7 +65,7 @@ export default function Contact() {
             <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-3">
               {trust.map((text, i) => (
                 <div key={i} className="flex items-center gap-3 text-sm text-slate-300">
-                  <svg className="w-4 h-4 text-hive-yellow shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <svg aria-hidden="true" className="w-4 h-4 text-hive-yellow shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                   {text}
@@ -79,7 +79,7 @@ export default function Contact() {
               onClick={() => window.dispatchEvent(new Event("open-chat"))}
               className="w-full inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-800 bg-slate-900/60 px-5 py-4 text-sm font-medium text-slate-300 hover:border-hive-yellow/50 hover:text-hive-yellow transition-colors"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <svg aria-hidden="true" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
               </svg>
               {t("contact.chat_cta")}

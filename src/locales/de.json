@@ -31,10 +31,26 @@
     "how_we_work_heading_highlight": "zusammenarbeiten",
     "how_we_work_sub": "Ein klarer Prozess, der schnell Ergebnisse liefert – ohne die üblichen Umwege von Agenturen.",
     "process": [
-      { "step": "01", "title": "Kennenlerngespräch", "desc": "Wir erfahren mehr über Ihr Unternehmen, Ihr aktuelles Marketing und Ihre Ziele. Kein Verkaufsgespräch – nur ein ehrliches Gespräch." },
-      { "step": "02", "title": "Audit & Strategie", "desc": "Wir analysieren Ihre Anzeigen, Website und Tracking und erstellen eine 90-Tage-Roadmap mit klaren Prioritäten." },
-      { "step": "03", "title": "Aufbau & Launch", "desc": "Wir setzen den Plan um – Kampagnen, Seiten, Tools – und halten Sie bei jedem Schritt auf dem Laufenden." },
-      { "step": "04", "title": "Optimierung & Wachstum", "desc": "Wir verfolgen Ergebnisse wöchentlich, verfeinern was funktioniert, streichen was nicht funktioniert, und skalieren was konvertiert." }
+      {
+        "step": "01",
+        "title": "Kennenlerngespräch",
+        "desc": "Wir erfahren mehr über Ihr Unternehmen, Ihr aktuelles Marketing und Ihre Ziele. Kein Verkaufsgespräch – nur ein ehrliches Gespräch."
+      },
+      {
+        "step": "02",
+        "title": "Audit & Strategie",
+        "desc": "Wir analysieren Ihre Anzeigen, Website und Tracking und erstellen eine 90-Tage-Roadmap mit klaren Prioritäten."
+      },
+      {
+        "step": "03",
+        "title": "Aufbau & Launch",
+        "desc": "Wir setzen den Plan um – Kampagnen, Seiten, Tools – und halten Sie bei jedem Schritt auf dem Laufenden."
+      },
+      {
+        "step": "04",
+        "title": "Optimierung & Wachstum",
+        "desc": "Wir verfolgen Ergebnisse wöchentlich, verfeinern was funktioniert, streichen was nicht funktioniert, und skalieren was konvertiert."
+      }
     ],
     "cta_heading_part1": "Bereit, aufzuhören zu raten und",
     "cta_heading_highlight": "zu wachsen?",
@@ -49,9 +65,18 @@
     "heading_highlight": "Hive Media arbeiten?",
     "sub": "Wir schalten nicht nur Anzeigen – wir bauen das komplette System, das Klicks in abgeschlossene Deals verwandelt, damit Sie sich auf Ihr Geschäft konzentrieren können, während Leads kontinuierlich eingehen.",
     "items": [
-      { "title": "Wir verstehen Dienstleistungsunternehmen", "description": "Wir arbeiten mit HLK-, Bau- und Haushaltsdienstleistern. Wir kennen Ihre Verkaufszyklen, Saisonalität und wie ein wirklich qualifizierter Lead aussieht." },
-      { "title": "Kompletter technischer Stack intern", "description": "Strategie, Tracking, Webentwicklung und interne Tools unter einem Dach. Kein gegenseitiges Beschuldigen zwischen Agenturen und Entwicklern." },
-      { "title": "Besessen von Klarheit und Reporting", "description": "Sie erhalten Dashboards und Berichte, die zeigen, wohin Ihr Geld fließt, was funktioniert und was wir als nächstes tun – keine Eitelkeitsmetriken." }
+      {
+        "title": "Wir verstehen Dienstleistungsunternehmen",
+        "description": "Wir arbeiten mit HLK-, Bau- und Haushaltsdienstleistern. Wir kennen Ihre Verkaufszyklen, Saisonalität und wie ein wirklich qualifizierter Lead aussieht."
+      },
+      {
+        "title": "Kompletter technischer Stack intern",
+        "description": "Strategie, Tracking, Webentwicklung und interne Tools unter einem Dach. Kein gegenseitiges Beschuldigen zwischen Agenturen und Entwicklern."
+      },
+      {
+        "title": "Besessen von Klarheit und Reporting",
+        "description": "Sie erhalten Dashboards und Berichte, die zeigen, wohin Ihr Geld fließt, was funktioniert und was wir als nächstes tun – keine Eitelkeitsmetriken."
+      }
     ]
   },
   "common": {
@@ -84,22 +109,32 @@
     "manufacturing": "Fertigung",
     "about": "Über uns",
     "blog": "Blog",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "websites": "Websites"
   },
   "about": {
     "badge": "Über uns",
     "h1": "Über Hive Media",
     "intro": "Wir kombinieren Performance-Marketing, moderne Webentwicklung und interne Tools, um vorhersehbare Wachstumssysteme für Dienstleistungsunternehmen zu entwickeln.",
     "why_badge": "Warum wir existieren",
-    "why_p1": "Wir haben Hive Media gegründet, nachdem wir immer wieder dasselbe Problem gesehen haben: 9 von 10 Dienstleistungsunternehmen – HLK, Dachdecker, Bau – verbrannten Geld für Anzeigen, die Klicks, aber keine echten Kunden generierten. Agenturen berichteten über Impressionen und CTR, aber niemand fragte: „Wie viele dieser Klicks wurden zu gebuchten Aufträgen?\u201c",
+    "why_p1": "Wir haben Hive Media gegründet, nachdem wir immer wieder dasselbe Problem gesehen haben: 9 von 10 Dienstleistungsunternehmen – HLK, Dachdecker, Bau – verbrannten Geld für Anzeigen, die Klicks, aber keine echten Kunden generierten. Agenturen berichteten über Impressionen und CTR, aber niemand fragte: „Wie viele dieser Klicks wurden zu gebuchten Aufträgen?“",
     "why_p2": "Wir haben Hive gegründet, um diese Frage zu beantworten und die gesamte Pipeline zu reparieren – vom Anzeigenklick bis zum abgeschlossenen Deal.",
     "philosophy_part1": "Unsere Philosophie ist einfach:",
     "philosophy_highlight": "erst Strategie, dann Umsetzung, dann Iteration.",
     "philosophy_rest": "Wir glauben nicht an Eitelkeitsmetriken, langfristige Exklusivverträge oder Arbeit, die Ihr Geschäft nicht direkt voranbringt.",
     "values": [
-      { "title": "Technik und Marketing an einem Ort", "desc": "Wir überbrücken die Lücke zwischen der Marketingstrategie und dem Code, der geschrieben werden muss, um sie Wirklichkeit werden zu lassen." },
-      { "title": "Transparente Kommunikation", "desc": "Wir teilen, was wir tun, warum wir es tun und wie es läuft – ob gut oder schlecht." },
-      { "title": "Langfristige Partnerschaften", "desc": "Unsere beste Arbeit entsteht mit Kunden, die uns als Partner und Mitarbeiter sehen, nicht nur als einen weiteren Dienstleister." }
+      {
+        "title": "Technik und Marketing an einem Ort",
+        "desc": "Wir überbrücken die Lücke zwischen der Marketingstrategie und dem Code, der geschrieben werden muss, um sie Wirklichkeit werden zu lassen."
+      },
+      {
+        "title": "Transparente Kommunikation",
+        "desc": "Wir teilen, was wir tun, warum wir es tun und wie es läuft – ob gut oder schlecht."
+      },
+      {
+        "title": "Langfristige Partnerschaften",
+        "desc": "Unsere beste Arbeit entsteht mit Kunden, die uns als Partner und Mitarbeiter sehen, nicht nur als einen weiteren Dienstleister."
+      }
     ],
     "how_we_work_heading": "Wie wir gerne arbeiten",
     "steps": [
@@ -117,9 +152,18 @@
     "sub": "Füllen Sie das Formular aus und wir melden uns innerhalb von 1–2 Werktagen mit den nächsten Schritten oder einem Vorschlag für ein Strategiegespräch.",
     "what_next_heading": "Was passiert als nächstes",
     "steps": [
-      { "title": "Wir prüfen Ihre Angaben", "desc": "Wir lesen Ihre Nachricht und prüfen, ob wir gut zueinander passen." },
-      { "title": "Wir holen Kontext ein", "desc": "Wir können Lesezugriff auf Ihre Website oder Ihr Anzeigenkonto anfordern." },
-      { "title": "Strategiegespräch", "desc": "Wir vereinbaren einen Anruf, um Prioritäten und nächste Schritte zu besprechen." }
+      {
+        "title": "Wir prüfen Ihre Angaben",
+        "desc": "Wir lesen Ihre Nachricht und prüfen, ob wir gut zueinander passen."
+      },
+      {
+        "title": "Wir holen Kontext ein",
+        "desc": "Wir können Lesezugriff auf Ihre Website oder Ihr Anzeigenkonto anfordern."
+      },
+      {
+        "title": "Strategiegespräch",
+        "desc": "Wir vereinbaren einen Anruf, um Prioritäten und nächste Schritte zu besprechen."
+      }
     ],
     "trust": [
       "Keine Verpflichtung — kein Spam, keine Bedingungen",
@@ -139,7 +183,7 @@
     "step_message_ph": "Beschreiben Sie kurz Ihr Unternehmen, Ihre Ziele oder Ihre Fragen.",
     "continue": "Weiter",
     "send": "Nachricht senden",
-    "sending": "Wird gesendet...",
+    "sending": "Wird gesendet…",
     "skip": "Überspringen & senden",
     "success_title": "Nachricht gesendet!",
     "success_sub": "Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 1–2 Werktagen.",
@@ -148,7 +192,14 @@
     "compact_name_ph": "Ihr Name",
     "compact_email_ph": "sie@unternehmen.de",
     "compact_cta": "Meine kostenlose Roadmap erhalten",
-    "services": ["Google Ads", "Website-Neugestaltung", "SEO", "Interne Tools", "Vollständige Strategie", "Noch unsicher"]
+    "services": [
+      "Google Ads",
+      "Website-Neugestaltung",
+      "SEO",
+      "Interne Tools",
+      "Vollständige Strategie",
+      "Noch unsicher"
+    ]
   },
   "services_page": {
     "badge": "Unsere Leistungen",

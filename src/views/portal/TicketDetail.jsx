@@ -129,7 +129,7 @@ export default function TicketDetail() {
             className="flex-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2.5 text-sm text-slate-50 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-hive-yellow"
           />
           <button type="submit" disabled={!input.trim() || sending}
-            className="rounded-lg bg-hive-yellow px-5 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 disabled:opacity-40 transition-all"
+            className="rounded-lg bg-hive-yellow px-5 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 disabled:opacity-40 transition"
           >
             Send
           </button>

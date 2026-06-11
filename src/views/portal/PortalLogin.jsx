@@ -80,7 +80,7 @@ export default function PortalLogin() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-hive-yellow px-4 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 transition-all disabled:opacity-50"
+            className="w-full rounded-lg bg-hive-yellow px-4 py-2.5 text-sm font-semibold text-slate-950 hover:brightness-110 transition disabled:opacity-50"
           >
             {loading ? "Signing in..." : "Sign in"}
           </button>
