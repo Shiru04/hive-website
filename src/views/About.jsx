@@ -2,6 +2,7 @@
 
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import Image from "next/image";
 import JsonLd from "../seo/JsonLd.jsx";
 import teamImg from "../assets/team-collab.webp";
 import { useLang } from "../hooks/useLang.js";
@@ -48,13 +49,13 @@ export default function About() {
 
         {/* Team image */}
         <div className="relative rounded-2xl overflow-hidden border border-slate-800 max-w-5xl">
-          <img
-            src={teamImg.src}
+          <Image
+            src={teamImg}
             alt="Hive Media team collaborating"
             className="w-full h-[280px] sm:h-[340px] object-cover object-top"
-            loading="lazy"
-            width="1200"
-            height="340"
+            width={1200}
+            height={340}
+            sizes="(max-width: 1024px) 100vw, 1024px"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20" />
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import remoteCallImg from "../assets/remote-call.webp";
 import { useLang } from "../hooks/useLang.js";
@@ -69,14 +70,14 @@ export default function Hero() {
         <div className="relative hidden lg:block">
           <div className="absolute -inset-4 bg-gradient-to-tr from-hive-yellow/10 via-transparent to-sky-500/10 blur-3xl pointer-events-none" />
           <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl">
-            <img
-              src={remoteCallImg.src}
+            <Image
+              src={remoteCallImg}
               alt="Strategy call with a client"
               className="w-full h-[420px] object-cover object-center"
-              loading="eager"
-              width="600"
-              height="420"
-              fetchPriority="high"
+              width={600}
+              height={420}
+              priority
+              sizes="(max-width: 1023px) 100vw, 40vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
