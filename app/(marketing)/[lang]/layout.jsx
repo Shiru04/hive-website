@@ -39,6 +39,7 @@ const ORG_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Hive Media",
+  alternateName: ["Hive Media Stop", "hivemediastop", "Hive Media Guatemala"],
   url: "https://hivemediastop.com",
   logo: "https://hivemediastop.com/logo-hive.png",
   description:
