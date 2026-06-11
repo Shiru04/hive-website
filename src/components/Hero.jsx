@@ -77,7 +77,7 @@ export default function Hero() {
               width={600}
               height={420}
               priority
-              sizes="(max-width: 1023px) 100vw, 40vw"
+              sizes="(max-width: 1023px) 1px, 40vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 

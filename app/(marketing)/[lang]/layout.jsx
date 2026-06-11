@@ -3,7 +3,7 @@ import "@/styles/index.css";
 import I18nProvider from "@/components/I18nProvider.jsx";
 import Navbar from "@/components/Navbar.jsx";
 import Footer from "@/components/Footer.jsx";
-import ChatWidget from "@/components/ChatWidget.jsx";
+import LazyChatWidget from "@/components/LazyChatWidget.jsx";
 import JsonLd from "@/seo/JsonLd.jsx";
 import { SITE_URL, SUPPORTED_LANGS } from "@/seo/metadata.js";
 
@@ -147,7 +147,7 @@ export default async function MarketingLayout({ children, params }) {
             <Navbar />
             <main className="flex-1 pt-20 pb-12">{children}</main>
             <Footer />
-            <ChatWidget />
+            <LazyChatWidget />
           </div>
         </I18nProvider>
       </body>
